@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://wiki.openoffice.org/wiki/Xml -->
+<html lang="es" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./Xml - Apache OpenOffice Wiki_files/load.php"></script>
+
+<title>Xml - Apache OpenOffice Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.13">
+<link rel="shortcut icon" href="https://wiki.openoffice.org/w/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.openoffice.org/w/opensearch_desc.php" title="Apache OpenOffice Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.openoffice.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://wiki.openoffice.org/wiki/OpenOffice.org_Wiki:Copyrights">
+<link rel="alternate" type="application/atom+xml" title="Canal Atom de Apache OpenOffice Wiki" href="https://wiki.openoffice.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="./Xml - Apache OpenOffice Wiki_files/load(1).php">
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/w/skins/aoo/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/w/skins/aoo/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/aoo/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/aoo/IE70Fixes.css?303" media="screen" /><![endif]--><style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none} caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: wikiaoo:resourceloader:filter:minify-css:7:6c1d24e90626cec584f0869483f983e7 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: wikiaoo:resourceloader:filter:minify-css:7:9f9511aa4ef920d34591113e825e6a1e */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;-webkit-box-shadow:0 2px 5px 0 #ccc;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(https://wiki.openoffice.org/w/resources/src/mediawiki.action/images/green-checkmark.png?2015-12-21T01:31:40Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: wikiaoo:resourceloader:filter:minify-css:7:2adea0bc6d7367536ab69c2d63da8723 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: wikiaoo:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wikiaoo:resourceloader:filter:minify-css:7:e28cab7d38ce835e13fb517be20d02b6 */</style>
+<script type="text/javascript" async="" src="./Xml - Apache OpenOffice Wiki_files/ga.js"></script><script src="./Xml - Apache OpenOffice Wiki_files/load(2).php"></script><script src="./Xml - Apache OpenOffice Wiki_files/load(3).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Xml","wgTitle":"Xml","wgCurRevisionId":232099,"wgRevisionId":232099,"wgArticleId":4250,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["XML","Project"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Xml","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":false,"hidesig":true,"preview":true,"previewDialog":false,"publish":false},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"aoo","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"usebetatoolbar":1,"wikieditor-preview":1,"usenavigabletoc":1,"rchidelogs":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs274":false,"searchNs275":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wikiaoo:resourceloader:filter:minify-js:7:b4b2982a7c0e85a7e8548683aa1f02f8 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script src="./Xml - Apache OpenOffice Wiki_files/load(4).php"></script>
+<link href="https://plus.google.com/114598373874764163668%20rel=" publisher"=""><script type="text/javascript">
+var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-30193653-1']);_gaq.push(['_setDomainName', 'openoffice.org']);_gaq.push(['_trackPageview']);
+(function() {var ga = document.createElement('script'); ga.type = 'text/javascript';ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Xml skin-aoo action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" class="mw-body-primary">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading"><span dir="auto">Xml</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">De Apache OpenOffice Wiki</div>
+		<div id="contentSub" lang="es" dir="ltr"></div>
+		<div id="jump-to-nav" class="mw-jump">Saltar a: <a href="https://wiki.openoffice.org/wiki/Xml#column-one">navegación</a>, <a href="https://wiki.openoffice.org/wiki/Xml#searchInput">buscar</a></div>
+		<!-- start content -->
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>These are the Wiki pages of the <a class="external text" href="http://xml.openoffice.org/">Apache OpenOffice XML Project</a>.
+</p><p>The following information can be found on these pages:
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contenido</h2><span class="toctoggle">&nbsp;[<a href="https://wiki.openoffice.org/wiki/Xml#" class="internal" id="togglelink">ocultar</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#Current_Efforts_of_the_XML_Project"><span class="tocnumber">1</span> <span class="toctext">Current Efforts of the XML Project</span></a></li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#Contribution_Areas"><span class="tocnumber">2</span> <span class="toctext">Contribution Areas</span></a>
+<ul>
+<li class="toclevel-2"><a href="https://wiki.openoffice.org/wiki/Xml#XML_Based_Filters"><span class="tocnumber">2.1</span> <span class="toctext">XML Based Filters</span></a>
+<ul>
+<li class="toclevel-3"><a href="https://wiki.openoffice.org/wiki/Xml#Detection_of_the_file_type"><span class="tocnumber">2.1.1</span> <span class="toctext">Detection of the file type</span></a></li>
+<li class="toclevel-3"><a href="https://wiki.openoffice.org/wiki/Xml#Access_to_images"><span class="tocnumber">2.1.2</span> <span class="toctext">Access to images</span></a></li>
+<li class="toclevel-3"><a href="https://wiki.openoffice.org/wiki/Xml#Error_logging"><span class="tocnumber">2.1.3</span> <span class="toctext">Error logging</span></a></li>
+<li class="toclevel-3"><a href="https://wiki.openoffice.org/wiki/Xml#Validation"><span class="tocnumber">2.1.4</span> <span class="toctext">Validation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#OpenDocument_Tools_at_OpenOffice.org"><span class="tocnumber">3</span> <span class="toctext">OpenDocument Tools at OpenOffice.org</span></a></li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#External_OpenDocument_Tools"><span class="tocnumber">4</span> <span class="toctext">External OpenDocument Tools</span></a></li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#Articles_and_Books"><span class="tocnumber">5</span> <span class="toctext">Articles and Books</span></a></li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#Reports_and_Research_Documents_covering_the_OpenDocument_format"><span class="tocnumber">6</span> <span class="toctext">Reports and Research Documents covering the OpenDocument format</span></a></li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#Filters_and_Conversions_based_on_OpenDocument.2FOpenOffice.org_XML"><span class="tocnumber">7</span> <span class="toctext">Filters and Conversions based on OpenDocument/OpenOffice.org XML</span></a></li>
+<li class="toclevel-1"><a href="https://wiki.openoffice.org/wiki/Xml#Source_Code_Modules_in_the_OpenOffice.org_XML_Project"><span class="tocnumber">8</span> <span class="toctext">Source Code Modules in the OpenOffice.org XML Project</span></a></li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Current_Efforts_of_the_XML_Project">Current Efforts of the XML Project</span></h1>
+<ul>
+<li> <a class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office">OpenDocument</a>: Contributions to the formula specification that is developed by the <a class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office-formula">OASIS OpenDocument Formula Subcommittee</a>.
+</li>
+</ul>
+<ul>
+<li> <a class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office">OpenDocument</a>: Contributions to the metadata enhancements for OpenDocument v1.2 that are developed by the <a class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office-formula">OASIS OpenDocument Metadata Subcommittee</a>.
+</li>
+</ul>
+<ul>
+<li> <a class="external text" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office">OpenDocument</a>: Contributions to the OpenDocument v1.2 specification, including reviews of the specification documents.
+</li>
+</ul>
+<ul>
+<li> <a class="external text" href="http://performance.openoffice.org/">Performance improvements</a>: The XML project participates in the <a class="external text" href="http://performance.openoffice.org/">Performance project</a>
+</li>
+</ul>
+<h1><span class="mw-headline" id="Contribution_Areas">Contribution Areas</span></h1>
+<p>The OpenOffice.org XML project is looking for contributions in the areas listed below. If you
+are interested in working in one of these areas, please contact us at <a class="external text" href="http://xml.openoffice.org/servlets/ProjectMailingListList">dev@xml.openoffice.org</a>.
+</p>
+<h2><span class="mw-headline" id="XML_Based_Filters">XML Based Filters</span></h2>
+<p>The following suggestions are related to the framwork for XML based filters.
+</p>
+<h3><span class="mw-headline" id="Detection_of_the_file_type">Detection of the file type</span></h3>
+<p>Every time a document is being imported into OpenOffice.org the so called filter 
+detection chooses between the existing filter implementations to find the one matching the 
+type of document that shall be loaded. For filters that load XML documents using the filter
+framework, the filter detection only searches for a string with the first 1000 characters of a document. This string can be specified in the XML Filter Settings dialog.
+</p><p>A better solution, that we would like to have instead, would be to check the name and or XML namespace of the root node of the XML document.
+</p>
+<h3><span class="mw-headline" id="Access_to_images">Access to images</span></h3>
+<p>Currently XML based filters have only access to the BASE64 encoded data of embedded images an objects. Having also access to the binary data (for instance by unpacking the zip file of an OpenDocument file) or having a simple way to convert the BASE64 data into a binary file would simplify the developmenmt of filters.
+</p>
+<h3><span class="mw-headline" id="Error_logging">Error logging</span></h3>
+<p>Currently error logging is comparable weak for the XML based / XSLT
+filters. The only way to enable logging is to set a Java environment variable (e.g.
+-DXSLTransformer.statsfile=/usr/local/offices/xslt_debug.txt) in the Office options for Java.
+</p><p>A few new features are imaginable, such as:
+</p>
+<ul>
+<li> Customizing the filter logging via GUI
+</li>
+<li> Usage of defined log level (analog to Java Logging)
+</li>
+<li> GUI flag for a cumulative log file (instead replacing log for every transformation)
+</li>
+</ul>
+<h3><span class="mw-headline" id="Validation">Validation</span></h3>
+<p>Currently, no XML validation takes place during the import or export of documents.
+Validation is only possible from a test dialog. 
+This test dialog might be dropped in favor of an external
+development tools and/or (optional) validation during runtime.
+To achieve this, it is not sufficient to reuse the existing
+functionality, because it supports only DTDs, but no Relax-NG or other XML schema langauges like Schematron.
+</p>
+<h1><span class="mw-headline" id="OpenDocument_Tools_at_OpenOffice.org">OpenDocument Tools at OpenOffice.org</span></h1>
+<table border="border">
+<tbody><tr>
+<th colspan="2">Tools at OpenOffice.org</th>
+</tr>
+<tr>
+<th>Tool</th>
+<th>Summary</th>
+</tr>
+<tr>
+<td><a class="external text" href="http://xml.openoffice.org/saxecho/">SAXEcho</a></td>
+<td>SAXEcho is a tool to be used with the OpenOffice.org application. It allows to view the XML representation of a document at runtime. It can either display the native XML file format representation of an in-memory   document, or the output of an an XSLT transformation on said document. It is written in Java.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://xml.openoffice.org/xfilter.html">xfilter tool</a></td>
+<td>This page documents the <code>xfilter</code> tool, which lets you execute XML-based filters (as explained in the <a class="external text" href="http://xml.openoffice.org/filter">Filters using XML</a> document) outside of OpenOffice.org or StarOffice.</td>
+</tr>
+</tbody></table>
+<h1><span class="mw-headline" id="External_OpenDocument_Tools">External OpenDocument Tools</span></h1>
+<table border="border">
+<tbody><tr>
+<th colspan="2">External Tools</th>
+</tr>
+<tr>
+<th>Tool</th>
+<th>Summary</th>
+</tr>
+
+<tr>
+<td><a class="external text" href="http://odftoolkit.org/projects/odftoolkit/pages/ODFDOM">ODFDOM</a></td>
+<td><b>ODFDOM</b> is an OpenDocument (ODF) framework. It's purpose is to provide an easy common way to create, access and manipulate ODF files, without requiring detailed knowledge of the ODF specification.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://odftoolkit.org/projects/odftoolkit/pages/ODFValidator">ODF Validator</a></td>
+<td><b>ODF Validator</b> is a Java tool that validates OpenDocument files and checks them for certain conformance criteria.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://tools.odftoolkit.org/odfvalidator">ODF Online Validator</a></td>
+<td><b>ODF Online Validator</b> is an online validation and conformance check tool for ODF documents.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://odftoolkit.org/projects/odftoolkit/pages/ODFXSLTRunner">ODF XSLT Runner</a></td>
+<td><b>ODF XSLT Runner</b> is a small Java command line application that allows you to apply XSLT stylesheets to XML streams included in ODF packages without extracting them from the package.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://odftoolkit.org/projects/odftoolkit/pages/ODFXSLTRunnerTask">ODF XSLT Runner Task</a></td>
+<td><b>ODF XSLT Runner Task</b> is a task definition for Ant which allows to apply XSLT stylesheets to ODF documents similar to Ant's build-in &lt;xslt&gt; task. </td>
+</tr>
+
+<tr>
+<td><a class="external text" href="http://search.cpan.org/dist/OpenOffice-OODoc">The Perl OpenDocument Connector</a></td>
+<td>This toolkit allows direct OpenDocument file update and creation from Perl scripts. It works with the main document classes (texts, spreadsheets, presentations, and drawings), and provides an easy access to a large set of content and presentation elements.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://zope.org/Members/struktur/CMFOODocumentV02">CMFOODocument</a></td>
+<td>OpenOffice Documents for <a class="external text" href="http://www.icoya.com/">icoya Content &amp; Collaboration Management</a> - With CMFOODocument OpenOffice Writer files can easily be integrated inside your Plone site. The OO-Documents are converted by XSL transformation into HTML.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://ooolib.sourceforge.net/">OpenOffice.org Perl Library</a></td>
+<td>The OpenOffice.org Perl Library (ooolib) can be used to create simple OpenOffice.org Calc spreadsheet and Writer text documents.</td>
+</tr>
+</tbody></table>
+<h1><span class="mw-headline" id="Articles_and_Books">Articles and Books</span></h1>
+<table border="border">
+<tbody><tr>
+<th colspan="2">Articles and Books</th>
+</tr>
+<tr>
+<th>Document</th>
+<th>Summary</th>
+</tr>
+<tr>
+<td><a class="external text" href="http://books.evc-cit.info/">OASIS OpenDocument Essentials</a></td>
+<td><em>OASIS OpenDocument Essentials</em> introduces you to the XML that serves as the native internal format of OpenOffice.org. You should read this book if you want to extract data from an OpenDocument document, convert your data to an OpenDocument document, or simply find out how OpenOffice.org stores its data under the hood. The book is written by J. David Eisenberg for O'Reilly &amp; Associates; the content is currently licensed under a Creative Commons License.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.xml.com/pub/a/2001/02/07/openoffice.html">Adventures with OpenOffice and XML</a></td>
+<td>An article on XML.com, which shows how to use the XML File Format within the AxKit content management system.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.ibm.com/developerworks/xml/library/x-think15/">Thinking XML: The open office file format</a></td>
+<td>A nice introduction to the OpenOffice.org XML File Format; also goes into standardization at OASIS. Introduces the general document structure and demonstrates how to extract content.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://idealliance.org/proceedings/xtech05/papers/03-02-02/">From Open Source to Open Standard: The OASIS OpenDocument Format</a></td>
+<td>Paper for the "From Open Source to Open Standard: The OASIS OpenDocument Format" XTech 2005 presentation by Michael Brauer.</td>
+</tr>
+</tbody></table>
+<p>More articles and book on OpenDocument can be found at <a class="external text" href="http://opendocument.xml.org/resources">opendocument.xml.org</a>.
+</p>
+<h1><span class="mw-headline" id="Reports_and_Research_Documents_covering_the_OpenDocument_format">Reports and Research Documents covering the OpenDocument format</span></h1>
+<table border="border">
+<tbody><tr>
+<th colspan="2">Reports and Research Documents</th>
+</tr>
+<tr>
+<th>Document</th>
+<th>Summary</th>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.mass.gov/portal/index.jsp?pageID=itdsubtopic&amp;L=4&amp;L0=Home&amp;L1=Policies%2c+Standards+%26+Legal&amp;L2=Enterprise+Architecture&amp;L3=Enterprise+Technical+Reference+Model+-+Version+3.5&amp;sid=Aitd">Enterprise Technical Reference Model - Version 3.5</a></td>
+<td>The <a class="external text" href="http://www.mass.gov/Aitd/">Commonwealth of Massachusetts Information Technology Division</a>'s Enterprise Technical Reference Model (ETRM) provides an architectural framework used to identify the standards, specifications and technologies1 that support the Commonwealth's computing environment.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.europa.eu.int/ISPO/ida/jsps/index.jsp?fuseAction=showDocument&amp;parent=news&amp;documentID=1647">The IDA Open Source Migration GuidelinesXML File Format Specification</a></td>
+<td>Migration guidelines of the European Commission's <a class="external text" href="http://www.europa.eu.int/ISPO/ida/jsps/index.jsp?fuseAction=home">IDA initiative</a>.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.tekno.dk/subpage.php3?article=969&amp;survey=14&amp;language=uk&amp;front=1">Open-source software in e-government</a></td>
+<td>Analysis and recommendations drawn up by a working group under the <a class="external text" href="http://www.tekno.dk/">Danish Board of Technology</a>.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.statskontoret.se/pdf/2003116.pdf">Interoperability Test and XML Evaluation of StarOffice Writer 6.0 and Office Word 2003 Beta 2</a></td>
+<td>An interopability evaluation of <a class="external text" href="http://www.statskontoret.se/">Statskontoret</a> -  The Swedish Agency for Public Management</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.osafoundation.org/desktop-linux-overview.pdf">Desktop Linux Technology &amp; Market Overview</a></td>
+<td>A report of the <a class="external text" href="http://www.osafoundation.org/">Open Source Applications Foundation (OSAF)</a></td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.linux-ag.de/linux/texte/dfs/index.html">Offener Standard für Dokumentenformate / Open Standard for Document Exchange</a></td>
+<td>A study regarding open standards for document exchange of the <a class="external text" href="http://www.linux-ag.de/">Linux Information Systems AG</a></td>
+</tr>
+</tbody></table>
+<p>More reports and resarch document can be found on <a class="external text" href="http://opendocument.xml.org/resources">opendocument.xml.org</a>.
+</p>
+<h1><span class="mw-headline" id="Filters_and_Conversions_based_on_OpenDocument.2FOpenOffice.org_XML">Filters and Conversions based on OpenDocument/OpenOffice.org XML</span></h1>
+<table border="border">
+<tbody><tr>
+<th colspan="2">Filters and Conversions based on OpenDocument/OpenOffice.org XML</th>
+</tr>
+<tr>
+<th>Document</th>
+<th>Summary</th>
+</tr>
+<tr>
+<td><a class="external text" href="http://xml.openoffice.org/xmerge/docbook/">OpenOffice.org's DocBook filter</a></td>
+<td>Allows you to load and save DocBook files with OpenOffice.org through   XSLT. The filter is meant as proof of concept and does not support all DocBook elements. Community support is appreciated.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.chez.com/ebellot/ooo2sdbk/">Eric Bellot's DocBook converter</a></td>
+<td>This is another approach at translating between OpenOffice.org XML and DocBook. Eric Bellot uses Python and XSLT to perform the transformation. With examples and description.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://xml.openoffice.org/sx2ml/">OpenOffice.org XML export to strict XHTML 1.0</a></td>
+<td>Svante Schubert's XSL transformation for the creation of strict XHTML 1.0 from OpenOffice.org XML. Used for the online version of the <a class="external text" href="http://api.openoffice.org/docs/DevelopersGuide/DevelopersGuide.xhtml">Developers's Guide</a>. Delivered with StarOffice/OpenOffice.org as optional sample filter</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.hj-gym.dk/~hj/writer2latex">Writer2LaTeX</a></td>
+<td>Henrik Just's Writer2LaTeX converter is a command line utility and also a OO-exportfilter which converts OpenOffice.org documents to LaTeX and HTML. It is written in Java.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://xml.openoffice.org/source/browse/api/odk/examples/cpp/GenericXMLFilter/">Flat XML Filter</a></td>
+<td>The 'flat' XML filter lets you read and write office documents in plain XML files, i.e. without ZIP packages.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://ooo2txt.fr.st/">OOO2txt</a></td>
+<td>Frederic Labbe's OOO2txt tool generates a plain text representation of OpenOffice.or documents.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://libwpd.sourceforge.net/">libwpd</a></td>
+<td>William Lachance's libwpd and WordPerfect filter for OpenOffice.org Writer</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://freshmeat.net/projects/soffice2html/">OOo to HTML</a></td>
+<td>Steve Slaven's StarOffice/OpenOffice.org to HTML converter. Uses XSLTproc and ImageMagick.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://openshore.cvs.sourceforge.net/*checkout*/openshore/openshore/parser/src/smrl/RELEASE.html">OpenSHORE SMRL Metaparser Filter Package</a></td>
+<td>A <a class="external text" href="https://sourceforge.net/project/showfiles.php?group_id=65882&amp;package_id=195645">JAR filter package</a> that reads "<a class="external text" href="http://openshore.sourceforge.net/pdf/OpenSHORE-SMRL-Tutorial.pdf">Semantic Markup Rule Language</a>" (SMRL) specifications and creates <a class="external text" href="http://openshore.org/">OpenSHORE</a> XML, <a class="external text" href="http://topicmaps.org/xtm/">XML Topic Maps</a> (XTM), W3C RDF or <a class="external text" href="http://www.gupro.de/GXL/">Graph eXchange Language</a> (GXL) files from OpenDocument Text documents (*.odt).</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://pcwelt-praxis.de/downloads/pcwtextexportr/">pcwTextExportr</a></td>
+<td>This Tool provides export of OpenOffice.org SXW/ODT files (OpenOffice.org 1.x -3.x) and Microsoft Word DOC/DOCX files to XML (Docbook), RTF, HTML (Docbook), HTML help (HHP file) and PDF (with bookmarks). It works standalone without OpenOffice or Word installed.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.tei-c.org/Software/teioo/">Text Encoding Initiative (TEI)</a></td>
+<td>This package provides import and export XSLT stylesheets, a template file, to allow Open Office (version 1.1 and later) to open TEI XML documents, and save OO documents as TEI XML. The XSLT stylesheets effectively provide a mapping between the TEI DTD and the OpenOffice schema.</td>
+</tr>
+<tr>
+<td><a class="external text" href="http://www.wieser.at/openoffice/">RDF Ticker Template and Package</a></td>
+<td>Daten RDF Ticker template and export using XSLT, by Wieser Informationstechnik</td>
+</tr>
+</tbody></table>
+<h1><span class="mw-headline" id="Source_Code_Modules_in_the_OpenOffice.org_XML_Project">Source Code Modules in the OpenOffice.org XML Project</span></h1>
+<p>The following modules belong to the OpenOffice.org XML project:
+</p>
+<table border="border">
+<tbody><tr>
+<th colspan="3">Modules in XML Project</th>
+</tr>
+<tr>
+<th>Module</th>
+<th>Function</th>
+<th>Browse Source</th>
+</tr>
+<tr>
+<td><code>xmloff</code></td>
+<td>The module <code>xmloff</code> contains the document type definitions (DTDs) for the OpenOffice.org XML based file format. It also contains most of the C++ code to read and write these files and OpenDOcument files through the SAX interface. Some additional code exists within the application modules.</td>
+<td><a class="external text" href="http://xml.openoffice.org/source/browse/xml/xmloff/">source</a></td>
+</tr>
+<tr>
+<td><code>sax</code></td>
+<td>The module <code>sax</code> contains XML parser and XML writer components, both based on the SAX 1 interface. The parser itself is using James Clark's XT.</td>
+<td><a class="external text" href="http://xml.openoffice.org/source/browse/xml/sax/">source</a></td>
+</tr>
+<tr>
+<td><code>package</code></td>
+<td>The <code>package</code> module contains the Zip file access API implementation, the "generic" package API implementation and support for the XML Manifest file.</td>
+<td><a class="external text" href="http://xml.openoffice.org/source/browse/xml/package">source</a></td>
+</tr>
+<tr>
+<td><code>xmerge</code></td>
+<td>The <code>xmerge</code> module contains the sources for the "Document Editing on Small Devices" project. This project is documented <a class="external text" href="http://xml.openoffice.org/xmerge/">"&gt;here</a>.</td>
+<td><a class="external text" href="http://xml.openoffice.org/source/browse/xml/xmerge/">source</a></td>
+</tr>
+<tr>
+<td><code>filtertools</code></td>
+<td>The <code>filtertools</code> module contains a tool for running XML-based filters outside of OpenOffice.org.  The tool is documented <a class="external text" href="http://xml.openoffice.org/xfilter.html">here</a>.</td>
+<td><a class="external text" href="http://xml.openoffice.org/source/browse/xml/filtertools">source</a></td>
+</tr>
+</tbody></table>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.012 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 40/1000000
+Preprocessor generated node count: 124/1000000
+Post‐expand include size: 16434/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikiaoo:pcache:idhash:4250-0!*!*!!es!*!* and timestamp 20190321133941 and revision id 232099
+ -->
+</div><div class="printfooter">
+Obtenido de «<a href="https://wiki.openoffice.org/w/index.php?title=Xml&amp;oldid=232099">https://wiki.openoffice.org/w/index.php?title=Xml&amp;oldid=232099</a>»</div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.openoffice.org/wiki/Special:Categories" title="Special:Categories">Categorías</a>: <ul><li><a href="https://wiki.openoffice.org/wiki/Category:XML" title="Category:XML">XML</a></li><li><a href="https://wiki.openoffice.org/wiki/Category:Project" title="Category:Project">Project</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one" lang="es" dir="ltr">
+	<div id="p-cactions" class="portlet">
+		<h5>Vistas</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://wiki.openoffice.org/wiki/Xml" title="Ver el artículo [alt-shift-c]" accesskey="c">Página</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.openoffice.org/w/index.php?title=Talk:Xml&amp;action=edit&amp;redlink=1" title="Discusión acerca del artículo [alt-shift-t]" accesskey="t">Discusión</a></li>
+				<li id="ca-viewsource"><a href="https://wiki.openoffice.org/w/index.php?title=Xml&amp;action=edit" title="Esta página está protegida.
+Puedes ver su código fuente [alt-shift-e]" accesskey="e">Ver código</a></li>
+				<li id="ca-history"><a href="https://wiki.openoffice.org/w/index.php?title=Xml&amp;action=history" rel="archives" title="Versiones anteriores de esta página y sus autores [alt-shift-h]" accesskey="h">Historial</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Herramientas personales</h5>
+		<div class="pBody">
+			<ul lang="es" dir="ltr">
+				<li id="pt-login"><a href="https://wiki.openoffice.org/w/index.php?title=Special:UserLogin&amp;returnto=Xml" title="Te recomendamos iniciar sesión, sin embargo no es obligatorio [alt-shift-o]" accesskey="o">Iniciar sesión</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+<a href="https://wiki.openoffice.org/wiki/Main_Page" style="background-image: url();" title="Visitar la página principal"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navegación</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="https://wiki.openoffice.org/wiki/Main_Page" title="Visitar la página principal [alt-shift-z]" accesskey="z">Página principal</a></li>
+				<li id="n-recentchanges"><a href="https://wiki.openoffice.org/wiki/Special:RecentChanges" title="Lista de cambios recientes en el wiki [alt-shift-r]" accesskey="r">Cambios recientes</a></li>
+				<li id="n-Download-AOO"><a href="http://download.openoffice.org/" rel="nofollow">Download AOO</a></li>
+				<li id="n-Documentation"><a href="https://wiki.openoffice.org/wiki/Documentation">Documentation</a></li>
+				<li id="n-User-Forum"><a href="http://forum.openoffice.org/" rel="nofollow">User Forum</a></li>
+				<li id="n-Extensions"><a href="http://extensions.services.openoffice.org/" rel="nofollow">Extensions</a></li>
+				<li id="n-Templates"><a href="http://templates.services.openoffice.org/" rel="nofollow">Templates</a></li>
+				<li id="n-Wiki-Help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" rel="nofollow">Wiki Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-coll-print_export">
+		<h5>Imprimir/exportar</h5>
+		<div class="pBody">
+			<ul>
+				<li id="coll-create_a_book"><a href="https://wiki.openoffice.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=ES%2FManuales%2FOrtografia">Crear un libro</a></li>
+				<li id="coll-download-as-rl"><a href="https://wiki.openoffice.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=ES%2FManuales%2FOrtografia&amp;oldid=242339&amp;writer=rl">Descargar como PDF</a></li>
+				<li id="t-print"><a href="https://wiki.openoffice.org/w/index.php?title=ES/Manuales/Ortografia&amp;printable=yes" title="Versión imprimible de esta página [alt-shift-p]" accesskey="p">Versión para imprimir</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Buscar</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="https://wiki.openoffice.org/w/index.php" id="searchform">
+				<input type="hidden" name="title" value="Special:Search">
+				<input type="search" name="search" placeholder="Buscar" title="Buscar en Apache OpenOffice Wiki [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<input type="submit" name="go" value="Ir" title="Ir al artículo con este nombre exacto si existe" id="searchGoButton" class="searchButton">&nbsp;
+				<input type="submit" name="fulltext" value="Buscar" title="Busca este texto en las páginas" id="mw-searchButton" class="searchButton">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Herramientas</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="https://wiki.openoffice.org/wiki/Special:WhatLinksHere/Xml" title="Lista de todas las páginas del wiki que enlazan aquí [alt-shift-j]" accesskey="j">Lo que enlaza aquí</a></li>
+				<li id="t-recentchangeslinked"><a href="https://wiki.openoffice.org/wiki/Special:RecentChangesLinked/Xml" title="Cambios recientes en las páginas que enlazan con esta [alt-shift-k]" accesskey="k">Cambios relacionados</a></li>
+				<li id="t-specialpages"><a href="https://wiki.openoffice.org/wiki/Special:SpecialPages" title="Lista de todas las páginas especiales [alt-shift-q]" accesskey="q">Páginas especiales</a></li>
+				<li id="t-permalink"><a href="https://wiki.openoffice.org/w/index.php?title=Xml&amp;oldid=232099" title="Enlace permanente a esta versión de la página">Enlace permanente</a></li>
+				<li id="t-info"><a href="https://wiki.openoffice.org/w/index.php?title=Xml&amp;action=info">Información de la página</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer" lang="es" dir="ltr">
+	<div id="f-copyrightico">
+		<a href="https://wiki.openoffice.org/wiki/apache.org/foundation/marks/"><img src="./Xml - Apache OpenOffice Wiki_files/asf_logo_simple.png" alt="ALv2" width="88" height="31"></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="https://www.mediawiki.org/"><img src="./Xml - Apache OpenOffice Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> Esta página fue modificada por última vez el 30 oct 2013, a las 17:25.</li>
+		<li id="copyright"><span lang="en" dir="ltr">Content is available under <a href="https://wiki.openoffice.org/wiki/OpenOffice.org_Wiki:Copyrights" title="OpenOffice.org Wiki:Copyrights">ALv2</a> unless otherwise noted.</span></li>
+		<li id="privacy"><a href="https://wiki.openoffice.org/wiki/Apache_OpenOffice_Wiki:Privacy_policy" title="Apache OpenOffice Wiki:Privacy policy">Política de protección de datos</a></li>
+		<li id="about"><a href="https://wiki.openoffice.org/wiki/Apache_OpenOffice_Wiki:About" title="Apache OpenOffice Wiki:About">Acerca de Apache OpenOffice Wiki</a></li>
+		<li id="disclaimer"><a href="https://wiki.openoffice.org/wiki/Apache_OpenOffice_Wiki:General_disclaimer" title="Apache OpenOffice Wiki:General disclaimer">Aviso legal</a></li>
+	</ul>
+</div>
+</div>
+<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":44});
+}</script><div class="suggestions" style="display: none; font-size: 13.3333px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

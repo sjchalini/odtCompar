@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0071)http://books.evc-cit.info/books/oobook/ch02.html#meta-casestudy-section -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chapter&nbsp;2.&nbsp;The meta.xml, styles.xml, settings.xml, and content.xml Files</title><link href="./Chapter 2. The meta.xml, styles.xml, settings.xml, and content.xml Files_files/oobook.css" rel="stylesheet" type="text/css"><meta content="DocBook XSL Stylesheets V1.62.4" name="generator"><link rel="home" href="http://books.evc-cit.info/books/oobook/book.html" title="OpenOffice.org XML Essentials"><link rel="up" href="http://books.evc-cit.info/books/oobook/book.html" title="OpenOffice.org XML Essentials"><link rel="previous" href="http://books.evc-cit.info/books/oobook/ch01.html" title="Chapter 1. The OpenOffice.org File Format"><link rel="next" href="http://books.evc-cit.info/books/oobook/ch03.html" title="Chapter 3. Text Document Basics"></head><body><div class="navheader"><table summary="Navigation header" width="100%"><tbody><tr><th align="center" colspan="3">Chapter&nbsp;2.&nbsp;The meta.xml, styles.xml, settings.xml, and content.xml Files</th></tr><tr><td align="left" width="20%"><a accesskey="p" href="http://books.evc-cit.info/books/oobook/ch01.html">Prev</a>&nbsp;</td><th align="center" width="60%">&nbsp;</th><td align="right" width="20%">&nbsp;<a accesskey="n" href="http://books.evc-cit.info/books/oobook/ch03.html">Next</a></td></tr></tbody></table><hr></div><div class="chapter" lang="en"><div class="titlepage"><div><div><h2 class="title"><a id="meta-style-settings-chapter">Chapter&nbsp;2.&nbsp;The meta.xml, styles.xml, settings.xml, and content.xml Files</a></h2></div></div><div></div><div class="toc"><p><a id="meta-style-settings-chapter"><b>Table of Contents</b></a></p><dl><dt><a id="meta-style-settings-chapter"><span class="sect1"></span></a><a href="http://books.evc-cit.info/books/oobook/ch02.html#settings-xml-section">The settings.xml File</a></dt><dd><dl><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#config-items-section">Configuration Items</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#item-map-named-section">Named Item Maps</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#item-map-indexed-section">Indexed Item Maps</a></span></dt></dl></dd><dt><span class="sect1"><a href="http://books.evc-cit.info/books/oobook/ch02.html#meta-xml-section">The meta.xml File</a></span></dt><dd><dl><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#dublin-core-section">The Dublin Core Elements</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#other-tags-sect">Elements from the meta Namespace</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#time-format-sect">Time and Duration Formats</a></span></dt></dl></dd><dt><span class="sect1"><a href="http://books.evc-cit.info/books/oobook/ch02.html#meta-casestudy-section">Case Study: Extracting Meta-Information</a></span></dt><dd><dl><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#archive-zip-sect">Archive::Zip::MemberRead</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#xml-simple-sect">XML::Simple</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#meta-extract-program-sect">The Meta Extraction Program</a></span></dt></dl></dd><dt><span class="sect1"><a href="http://books.evc-cit.info/books/oobook/ch02.html#styles-xml-section">The styles.xml File</a></span></dt><dd><dl><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#font-decls-section">Font Declarations</a></span></dt><dt><span class="sect2"><a href="http://books.evc-cit.info/books/oobook/ch02.html#office-styles-section">Office Default and Named Styles</a></span></dt></dl></dd><dt><span class="sect1"><a href="http://books.evc-cit.info/books/oobook/ch02.html#text-doc-superstructure-section">The content.xml File</a></span></dt></dl></div><p>
+Though <tt class="filename">content.xml</tt> is king,  monarchs rule better
+when surrounded by able assistants. In an OpenOffice.org document,
+these assistants are the <tt class="filename">meta.xml</tt>,
+<tt class="filename">style.xml</tt>, and <tt class="filename">settings.xml</tt>
+files.
+In this chapter, we will examine the assistant files, and then describe
+the general structure of the <tt class="filename">content.xml</tt> file.
+</p><p>
+Not that none of these files is actually necessary; if you create only a
+<tt class="filename">content.xml</tt> file that contains word processor
+elements and zip it up, OpenOffice.org
+will open it successfully. The result will
+be a plain text only document with no styles.
+You won’t have any of the meta-information about who created the
+file or when it was last edited, and the printer settings, view area,
+and zoom factor will be set to the OpenOffice.org defaults.
+</p><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="settings-xml-section">The settings.xml File</a></h2></div></div><div></div><div class="simplesect" lang="en"><div class="titlepage"><div><div></div><p><a id="settings-xml-section">
+The <tt class="filename">settings.xml</tt> file contains
+information intended for use exclusively by OpenOffice.org. From
+the viewpoint of an external application, there’s
+very little of use in this file, so we’ll just take a
+brief look at it before bidding it a fond farewell.
+</a></p><p><a id="settings-xml-section">
+The root element, <tt class="sgmltag-starttag">&lt;office:settings&gt;</tt>
+contains one or more <tt class="sgmltag-starttag">&lt;config:config-item-set&gt;</tt>
+entries.  Each of these contains one or more items, named item
+maps,indexed item maps, or other
+<tt class="sgmltag-starttag">&lt;config:config-item-set&gt;</tt>s.
+</a></p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="config-items-section">Configuration Items</a></h3></div></div><div></div><p><a id="config-items-section">
+The <tt class="sgmltag-starttag">&lt;config:config-item&gt;</tt>
+element has a <tt class="sgmltag-attribute">name</tt> attribute
+that describes the item and a <tt class="sgmltag-attribute">type</tt>
+attribute which can be one of
+<tt class="literal">boolean</tt>, <tt class="literal">short</tt>,
+<tt class="literal">int</tt>, <tt class="literal">long</tt>, <tt class="literal">double</tt>,
+<tt class="literal">string</tt>, <tt class="literal">datetime</tt>, or
+<tt class="literal">base64Binary</tt>. The content of the element gives the
+value of that item. </a><a href="http://books.evc-cit.info/books/oobook/ch02.html#config-item-example" title="Example 2.1. Example of Configuration Items">Example&nbsp;2.1, “Example of Configuration Items”</a> shows some
+representative configuration items from a word processing document:
+</p><div class="example"><a id="config-item-example"><p class="title"><b>Example&nbsp;2.1.&nbsp;Example of Configuration Items</b></p><pre class="programlisting">&lt;config:config-item config:name="ShowHeaderWhileBrowsing"
+   config:type="boolean"&gt;false&lt;/config:config-item&gt;
+
+&lt;config:config-item config:name="PrinterName"
+   config:type="string"&gt;Generic Printer&lt;/config:config-item&gt;
+
+&lt;config:config-item config:name="ViewLeft"
+   config:type="int"&gt;9906&lt;/config:config-item&gt;
+ 
+</pre></a></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="item-map-named-section">Named Item Maps</a></h3></div></div><div></div><p><a id="item-map-named-section">The <tt class="sgmltag-starttag">&lt;config:config-item-map-named&gt;</tt>
+element contains one or more
+<tt class="sgmltag-starttag">&lt;config:config-item-map-entry&gt;</tt>
+elements. Each of these map entries may contain 
+one or more items, item sets, named item maps, or indexed item maps
+(yes, this is a very recursive data structure). Entries in a named
+item map are accessed by their unique
+<tt class="sgmltag-attribute">name</tt> attribute. Spreadsheets use
+a named item map to store information about of each of the sheets
+in the document.
+</a></p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="item-map-indexed-section">Indexed Item Maps</a></h3></div></div><div></div><p><a id="item-map-indexed-section">
+A <tt class="sgmltag-starttag">&lt;config:config-item-map-indexed&gt;</tt>
+element also contains one or more 
+<tt class="sgmltag-starttag">&lt;config:config-item-map-entry&gt;</tt>
+elements. Each of these map entries may contain 
+one or more items, item sets, named item maps, or indexed item maps.
+The order of the individual map entries is important; entries are
+accessed by their position, not by their unique
+<tt class="sgmltag-attribute">name</tt> attribute.
+</a></p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="meta-xml-section">The meta.xml File</a></h2></div></div><div></div><p><a id="meta-xml-section">
+The <tt class="filename">meta.xml</tt> file contains information about
+the document itself, and this can be generally useful.
+We’ll look at the elements found in this file in decreasing order
+of importance; at the end of this section, we will list them in
+the order in which they appear in a document. Most of these elements
+are reflected in the tabs on the File/Properties dialog, which
+are show in
+
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>,
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#document-description-fig" title="Figure 2.2. Document Description">Figure&nbsp;2.2, “Document Description”</a>,
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#user-defined-info-fig" title="Figure 2.3. User-defined
+    Information">Figure&nbsp;2.3, “User-defined
+    Information”</a>, and
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#document-statistics-fig" title="Figure 2.4. Document
+Statistics">Figure&nbsp;2.4, “Document
+Statistics”</a>.
+
+</p><div class="figure"><a id="general-properties-fig"><p class="title"><b>Figure&nbsp;2.1.&nbsp;General
+    Document Properties</b></p><div><img src="./Chapter 2. The meta.xml, styles.xml, settings.xml, and content.xml Files_files/ooo.ess.0201.png" alt="General Document Properties"></div></a></div><div class="figure"><a id="document-description-fig"><p class="title"><b>Figure&nbsp;2.2.&nbsp;Document Description</b></p><div><img src="./Chapter 2. The meta.xml, styles.xml, settings.xml, and content.xml Files_files/ooo.ess.0202.png" alt="Document Description"></div></a></div><div class="figure"><a id="user-defined-info-fig"><p class="title"><b>Figure&nbsp;2.3.&nbsp;User-defined
+    Information</b></p><div><img src="./Chapter 2. The meta.xml, styles.xml, settings.xml, and content.xml Files_files/ooo.ess.0203.png" alt="User-defined Information"></div></a></div><div class="figure"><a id="document-statistics-fig"><p class="title"><b>Figure&nbsp;2.4.&nbsp;Document
+Statistics</b></p><div><img src="./Chapter 2. The meta.xml, styles.xml, settings.xml, and content.xml Files_files/ooo.ess.0204.png" alt="Document Statistics"></div></a></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="dublin-core-section">The Dublin Core Elements</a></h3></div></div><div></div><p><a id="dublin-core-section">
+All of the elements borrowed from the Dublin Core
+namespace contain text and have no attributes.
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#dcelements-table" title="Table 2.1. Dublin Core Elements in meta.xml">Table&nbsp;2.1, “Dublin Core Elements in meta.xml”</a> summarizes them.
+</p><div class="table"><a id="dcelements-table"><p class="title"><b>Table&nbsp;2.1.&nbsp;Dublin Core Elements in meta.xml</b></p><table summary="Dublin Core Elements in meta.xml" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Element</th><th>Description</th><th>Sample from XML file</th></tr></thead><tbody><tr><td><p><tt class="sgmltag-starttag">&lt;dc:title&gt;</tt></p></td><td><p>
+The document title; this appears in the title bar.
+</p></td><td><p><tt class="computeroutput">
+&lt;dc:title&gt;An Introduction to Digital Cameras&lt;/dc:title&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;dc:subject&gt;</tt></p></td><td><p>
+The Dublin Core recommends that this element contain keywords or key
+phrases to describe the topic of the document; OpenOffice.org
+keeps keywords in a separate set of elements.
+</p></td><td><p><tt class="computeroutput">
+&lt;dc:subject&gt;Digital Photography&lt;/dc:subject&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;dc:description&gt;</tt></p></td><td><p>
+This element’s content is shown in the Comments field in the
+dialog box.
+</p></td><td><p><tt class="computeroutput">
+&lt;dc:description&gt;This introduction…&lt;/dc:description&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;dc:creator&gt;</tt></p></td><td><p>
+This element’s content is shown
+in the Modified field in 
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>; it names the last
+person to edit the file. This may appear odd, but the Dublin Core
+says that the creator is simply an “entity primarily responsible
+for making the content of the resource.” That is not necessarily
+the original creator, whose name is stored in a different element.
+</p></td><td><p><tt class="computeroutput">
+&lt;dc:creator&gt;Steven L. Eisenberg&lt;/dc:creator&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;dc:date&gt;</tt></p></td><td><p>
+This element’s content is also shown
+in the Modified field in 
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>. It is stored in
+a form compatible with ISO-8601.  The time is shown in local
+time.  See <a href="http://books.evc-cit.info/books/oobook/ch02.html#time-format-sect" title="Time and Duration Formats">the section called “Time and Duration Formats”</a> for details
+about times and dates.
+</p></td><td><p><tt class="computeroutput">
+&lt;dc:date&gt;2003-06-30T22:39:05&lt;/dc:date&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;dc:language&gt;</tt></p></td><td><p>
+The document’s language, written as a two or three-letter main language
+code followed by a two-letter sublanguage
+code. This field is not shown
+in the properties dialog, but is found in OpenOffice.org’s
+Tools/Options/Language Settings
+dialog.
+</p></td><td><p><tt class="computeroutput">
+&lt;dc:language&gt;en-US&lt;/dc:language&gt;
+</tt></p></td></tr></tbody></table></a></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="other-tags-sect">Elements from the meta Namespace</a></h3></div></div><div></div><p><a id="other-tags-sect">The remaining elements in the <tt class="filename">meta.xml</tt>
+file come from OpenOffice.org’s <tt class="literal">meta</tt> namespace. 
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#meta-elements-table" title="Table 2.2. OpenOffice.org Elements in meta.xml">Table&nbsp;2.2, “OpenOffice.org Elements in meta.xml”</a> describes these elements in
+the order in which they appear in the file.</p><div class="table"><a id="meta-elements-table"><p class="title"><b>Table&nbsp;2.2.&nbsp;OpenOffice.org Elements in meta.xml</b></p><table summary="OpenOffice.org Elements in meta.xml" border="1"><colgroup><col><col><col></colgroup><thead><tr><th>Element</th><th>Description</th><th>Sample from XML file</th></tr></thead><tbody><tr><td><p><tt class="sgmltag-starttag">&lt;meta:generator&gt;</tt></p></td><td><p>
+The program that created this document. According to the specifcation,
+you should not “fake” being OpenOffice.org if you are creating the
+document using a different program; you should use a unique identifier.
+</p></td><td><p><tt class="computeroutput">
+&lt;meta:generator&gt;OpenOffice.org 1.1 (Linux)&lt;/meta:generator&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:initial-creator&gt;</tt></p></td><td><p>
+The user who created the document. This is shown in the "Created:" area
+in <a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>.
+</p></td><td><p><tt class="computeroutput">
+ &lt;meta:initial-creator&gt;J David Eisenberg&lt;/meta:initial-creator&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:creation-date&gt;</tt></p></td><td><p>
+The date and time when the document was created. This is shown in the
+“Created:” area
+in <a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>. It is in the same format
+as described in <a href="http://books.evc-cit.info/books/oobook/ch02.html#time-format-sect" title="Time and Duration Formats">the section called “Time and Duration Formats”</a>.
+</p></td><td><p><tt class="computeroutput">
+&lt;meta:creation-date&gt;2003-06-04T14:53:55&lt;/meta:creation-date&gt;
+</tt></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:keywords&gt;</tt></p></td><td><p>
+This element contains one or more
+<tt class="sgmltag-starttag">&lt;meta:keyword&gt;</tt> elements.
+These elements reflect
+the entries in the “Keywords:” area
+in <a href="http://books.evc-cit.info/books/oobook/ch02.html#document-description-fig" title="Figure 2.2. Document Description">Figure&nbsp;2.2, “Document Description”</a>.
+</p></td><td><p></p><pre class="programlisting">&lt;meta:keywords&gt;
+    &lt;meta:keyword&gt;photography&lt;/meta:keyword&gt;
+    &lt;meta:keyword&gt;cameras&lt;/meta:keyword&gt;
+    &lt;meta:keyword&gt;optics&lt;/meta:keyword&gt;
+    &lt;meta:keyword&gt;digital cameras&lt;/meta:keyword&gt;
+&lt;/meta:keywords&gt;
+</pre><p></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:editing-cycles&gt;</tt></p></td><td><p>
+This element tells how many times the file has been edited;
+this is the “Document Number:” in 
+in <a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>.
+</p></td><td><p></p><pre class="programlisting">&lt;meta:editing-cycles&gt;15&lt;/meta:editing-cycles&gt;
+</pre><p></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:editing-duration&gt;</tt></p></td><td><p>
+This element tells the total amount of time that has been spent
+editing the document in all editing sessions;
+this is the “Editing time:”
+in <a href="http://books.evc-cit.info/books/oobook/ch02.html#general-properties-fig" title="Figure 2.1. General
+    Document Properties">Figure&nbsp;2.1, “General
+    Document Properties”</a>, and is represented as
+described in <a href="http://books.evc-cit.info/books/oobook/ch02.html#time-format-sect" title="Time and Duration Formats">the section called “Time and Duration Formats”</a>.
+</p></td><td><p></p><pre class="programlisting">&lt;meta:editing-duration&gt;PT1H36M12S&lt;/meta:editing-duration&gt;
+</pre><p></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:user-defined&gt;</tt></p></td><td><p>
+OpenOffice.org allows you to define your own information, as shown
+in <a href="http://books.evc-cit.info/books/oobook/ch02.html#user-defined-info-fig" title="Figure 2.3. User-defined
+    Information">Figure&nbsp;2.3, “User-defined
+    Information”</a>. This element has a
+<tt class="sgmltag-attribute">meta:name</tt> attribute, giving
+the “title” of this information, and the content of the element is
+the information itself.
+</p></td><td><p></p><pre class="programlisting">&lt;meta:user-defined meta:name="Maximum Length"&gt;3 pages or
+750 words&lt;/meta:user-defined&gt;
+</pre><p></p></td></tr><tr><td><p><tt class="sgmltag-starttag">&lt;meta:document-statistic&gt;</tt></p></td><td><p>
+This is the information shown on the statistics tab of
+the properties dialog (see
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#document-statistics-fig" title="Figure 2.4. Document
+Statistics">Figure&nbsp;2.4, “Document
+Statistics”</a>). This element has attributes
+ whose names are largely self-explanatory, and are listed in
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#meta-statistics-table" title="Table 2.3. Attributes of the &lt;meta:document-statistic&gt; Element">Table&nbsp;2.3, “Attributes of the &lt;meta:document-statistic&gt; Element”</a>.
+</p></td><td><p></p><pre class="programlisting">&lt;meta:document-statistic meta:paragraph-count="4"…/&gt;
+</pre><p></p></td></tr></tbody></table></a></div><div class="table"><a id="meta-statistics-table"><p class="title"><b>Table&nbsp;2.3.&nbsp;Attributes of the &lt;meta:document-statistic&gt; Element</b></p><table summary="Attributes of the &lt;meta:document-statistic&gt; Element" border="1"><colgroup><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th></tr></thead><tbody><tr><td><p><tt class="sgmltag-attribute">meta:page-count</tt></p></td><td><p>Number of pages in a word processing document. This must be greater
+than zero. This attribute is not used in spreadsheets.
+The “number of pages” shown in the statistics dialog
+for a spreadsheet is a calculated value that tells how many sheets
+have filled cells on them, and this can be zero for a totally
+empty spreadsheet.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:paragraph-count</tt></p></td><td><p>Number of paragraphs in a word processing document.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:word-count</tt></p></td><td><p>Number of words in a word processing document.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:character-count</tt></p></td><td><p>Number of characters in a word processing document.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:image-count</tt></p></td><td><p>Number of images in a word processing document.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:table-count</tt></p></td><td><p>Number of tables in a word processing document, or number of
+sheets in a spreadsheet document.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:cell-count</tt></p></td><td><p>Number of non-empty cells in a spreadsheet document.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:object-count</tt></p></td><td><p>Number of objects in a document. This is shown as
+“Number of OLE objects” in the
+dialog box of <a href="http://books.evc-cit.info/books/oobook/ch02.html#document-statistics-fig" title="Figure 2.4. Document
+Statistics">Figure&nbsp;2.4, “Document
+Statistics”</a>.
+This attribute is used in drawing and presentation documents,
+but it does not bear any
+simple relationship to the number of items you see on the screen.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:ole-object-count</tt></p></td><td><p>Apparently unused in OpenOffice.org1.1.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:row-count</tt></p></td><td><p>Apparently unused in OpenOffice.org1.1.</p></td></tr><tr><td><p><tt class="sgmltag-attribute">meta:draw-count</tt></p></td><td><p>Apparently unused in OpenOffice.org1.1.</p></td></tr></tbody></table></a></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="time-format-sect">Time and Duration Formats</a></h3></div></div><div></div><p><a id="time-format-sect">
+The dates, times, and durations used in the metadata are patterned
+after the format described in the ISO 8601 standard.
+A date is written as a four-digit year,
+two-digit month, and two-digit day separated by hyphens. The
+capital letter <tt class="literal">T</tt> separates the date from the time,
+which is written in the form
+<tt class="literal"><span =""=""><em>hh</em></span>:<span class="emphasis"><em>mm</em></span>:<span class="emphasis"><em>ss</em></span></tt>.
+</a></p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title"><a id="time-format-sect">Warning</a></h3><p><a id="time-format-sect">
+OpenOffice.org does not implement the full ISO 8601 standard. For
+example, you may not use a truncated form such as 
+<tt class="literal">--06-20</tt> for a date, nor may you add a time zone
+offset after the time.
+</a></p></div><p><a id="time-format-sect">
+When you insert a date or time field into a text document, the seconds field
+is followed by a comma and decimal fraction of a second.  Thus,
+<tt class="literal">2003-08-29T09:54:26,50</tt> represents 9:54 and 26.5 seconds
+on the 29th of August, 2003.
+</a></p><p><a id="time-format-sect">
+Time durations, such as those in the
+<tt class="sgmltag-starttag">&lt;meta:editing-duration&gt;</tt> element,
+describe a length of days, hours, minutes, and seconds,
+written in the form 
+<tt class="literal">P<span class="emphasis"><em>d</em></span>DT<span class="emphasis"><em>h</em></span>H<span class="emphasis"><em>m</em></span>M<span class="emphasis"><em>s</em></span>S</tt>.
+If the editing time is less than one day, the
+<tt class="literal"><span =""=""><em>d</em></span>D</tt> is omitted.
+Thus, <tt class="literal">PT12M34S</tt> describes a duration of twelve minutes
+and thirty-four seconds. A duration may not specify
+a number of years or months as described in the ISO 8601 standard.
+</a></p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="meta-casestudy-section">Case Study: Extracting Meta-Information</a></h2></div></div><div></div><p><a id="meta-casestudy-section">
+Now that we know what the format of the meta file is, let’s construct a
+Perl program to extract that information.  Again, rather than reinvent the
+wheel, we will use two existing modules from the Comprehensive Perl
+Archive Network, CPAN
+(<tt class="systemitem">http://www.cpan.org/</tt>).
+The first of these, Archive::Zip::MemberRead, will let us read the 
+<tt class="filename">meta.xml</tt> file directly from the compressed
+OpenOffice.org document. We will use the XML::Simple 
+module to do the main work of the
+extraction program.</a></p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="archive-zip-sect">Archive::Zip::MemberRead</a></h3></div></div><div></div><p><a id="archive-zip-sect">
+It would be inefficient to unpack the OpenOffice.org document into a temporary
+directory, read the <tt class="filename">meta.xml</tt> file, and then remove the
+temporary directory.  Archive::Zip::MemberRead avoids this problem by letting
+you read members of a ZIP archive without having to unpack them.
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#member-read-pl-example" title="Example 2.2. Program member_read.pl">Example&nbsp;2.2, “Program member_read.pl”</a> shows the program
+that uses this module. The
+program takes two arguments: the filename of the OpenOffice.org document and
+the member of the  packed document that you want to read.  The program parcels
+out the data in 32 kilobyte chunks rather than reading it in as one huge
+string. It also sends its output to standard output so that it can be
+piped to other processes.
+</p><div class="example"><a id="member-read-pl-example"><p class="title"><b>Example&nbsp;2.2.&nbsp;Program member_read.pl</b></p><pre class="programlisting">#!/usr/bin/perl
+
+use Archive::Zip;
+use Archive::Zip::MemberRead;
+use Carp;
+use strict 'vars';
+
+my $zip;        # the zip file
+my $fh;         # filehandle to the member being read
+my $buffer;     # 32 kilobyte buffer
+
+#
+#   Extract a single XML file from an OpenOffice.org file
+#   Output goes to standard output
+#
+if (scalar @ARGV != 2)
+{
+    croak("Usage: $0 document xmlfilename");
+}
+
+$zip = new Archive::Zip($ARGV[0]);
+if (!$zip)
+{
+    croak("$ARGV[0] cannot be opened as a .ZIP file");
+}
+
+$fh  = new Archive::Zip::MemberRead($zip, $ARGV[1]);
+if (!$fh)
+{
+    croak("$ARGV[0] does not contain a file named $ARGV[1]");
+}
+
+while ($fh-&gt;read($buffer, 32*1024))
+{
+    print $buffer;
+}
+</pre></a></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="xml-simple-sect">XML::Simple</a></h3></div></div><div></div><p><a id="xml-simple-sect">
+This module does all the heavy work of parsing an XML file. You just
+give it the name of a file to parse, and it returns a reference to a
+hash which contains nested hashes. For this document:
+</a></p><pre class="programlisting"><a id="xml-simple-sect">&lt;document&gt;
+    &lt;h1&gt;Information&lt;/h1&gt;
+    &lt;para align="left" style="color:red;"&gt;More info&lt;/para&gt;
+&lt;/document&gt;
+</a></pre><p><a id="xml-simple-sect">
+XML::Simple returns a data structure as if we had written
+this Perl statement:
+</a></p><pre class="programlisting"><a id="xml-simple-sect">$result = {
+  'h1' =&gt; 'Information',
+  'para' =&gt; {
+              'align' =&gt; 'left',
+              'content' =&gt; 'More info',
+              'style' =&gt; 'color:red;'
+            }
+};
+</a></pre></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="meta-extract-program-sect">The Meta Extraction Program</a></h3></div></div><div></div><p><a id="meta-extract-program-sect">The program that actually does the extraction,
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#show-meta-pl-example" title="Example 2.3. Program show_meta.pl">Example&nbsp;2.3, “Program show_meta.pl”</a>, takes one argument:
+the OpenOffice.org document filename.  The program receives its input from
+the piped output of <tt class="filename">member_read.pl</tt>.
+</p><p>
+After the file is parsed, the program prints the data. Information in
+the <tt class="sgmltag-starttag">&lt;meta:document-statistic&gt;</tt> is
+selected depending upon the type of document being parsed. The program
+also uses the Text::Wrap module to format the description, which
+may be several lines long.
+</p><div class="example"><a id="show-meta-pl-example"><p class="title"><b>Example&nbsp;2.3.&nbsp;Program show_meta.pl</b></p><pre class="programlisting">#!/usr/bin/perl
+
+#
+#   Show meta-information in an OpenOffice.org document.
+#
+use XML::Simple;
+use IO::File;
+use Text::Wrap;
+use Carp;
+use strict;
+
+my $suffix;     # file suffix
+
+#
+#   Check for one argument: the name of the OpenOffice.org document
+#
+if (scalar @ARGV != 1)
+{
+    croak("Usage: $0 document");
+}
+
+#
+#   Get file suffix for later reference
+#
+($suffix) = $ARGV[0] =~ m/\.(\w\w\w)$/;
+
+#
+#   Parse and collect information into the $meta hash reference
+#
+$ARGV[0] =~ s/[;|'"]//g;  #eliminate dangerous shell metacharacters     
+my $fh = IO::File-&gt;new("perl member_read.pl $ARGV[0] meta.xml |");
+my $xml= XMLin( $fh, forcearray =&gt; [ 'meta:keyword'] );
+my $meta= $xml-&gt;{'office:meta'};
+
+#
+#   Output phase
+#
+print "Title:       $meta-&gt;{'dc:title'}\n"
+    if ($meta-&gt;{'dc:title'});
+print "Subject:     $meta-&gt;{'dc:subject'}\n"
+    if ($meta-&gt;{'dc:subject'});
+
+if ($meta-&gt;{'dc:description'})
+{
+    print "Description:\n";
+    $Text::Wrap::columns = 60;
+    print wrap("\t", "\t", $meta-&gt;{'dc:description'}), "\n";
+}
+
+print "Created:     ";
+print format_date($meta-&gt;{'meta:creation-date'});
+print " by $meta-&gt;{'meta:initial-creator'}"
+    if ($meta-&gt;{'meta:initial-creator'});
+print "\n";
+
+print "Last edit:   ";
+print format_date($meta-&gt;{"dc:date"});
+print " by $meta-&gt;{'dc:creator'}"
+    if ($meta-&gt;{'dc:creator'});
+print "\n";
+
+# Display keywords (which all appear to be in a single element)
+#
+print "Keywords:    ", join( ' - ',
+  @{$meta-&gt;{'meta:keywords'}-&gt;{'meta:keyword'}}), "\n"
+    if( $meta-&gt;{'meta:keywords'});
+
+#
+#   Take attributes from the meta:document-statistic element
+#   (if any) and put them into the $statistics hash reference
+#
+my $statistics= $meta-&gt;{'meta:document-statistic'};
+if ($suffix eq "sxw")
+{
+        print "Pages:       $statistics-&gt;{'meta:page-count'}\n";
+        print "Words:       $statistics-&gt;{'meta:word-count'}\n";
+        print "Tables:      $statistics-&gt;{'meta:table-count'}\n";
+        print "Images:      $statistics-&gt;{'meta:image-count'}\n";
+}
+elsif ($suffix eq "sxc")
+{
+        print "Sheets:      $statistics-&gt;{'meta:table-count'}\n";
+        print "Cells:       $statistics-&gt;{'meta:cell-count'}\n"
+                if ($statistics-&gt;{'meta:cell-count'});
+}
+
+
+#
+#   A convenience subroutine to make dates look
+#   prettier than ISO-8601 format.
+#
+sub format_date
+{
+    my $date = shift;
+    my ($year, $month, $day, $hr, $min, $sec);
+    my @monthlist = qw (Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
+    
+    ($year, $month, $day, $hr, $min, $sec) =
+        $date =~ m/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/;
+    return "$hr:$min on $day $monthlist[$month-1] $year";
+}   
+</pre></a></div><p><a id="show-meta-pl-example">
+These two lines from the preceding program
+are where all the parsing takes place:
+</a></p><pre class="programlisting"><a id="show-meta-pl-example">my $fh = IO::File-&gt;new("perl member_read.pl $ARGV[0] meta.xml |");
+my $xml= XMLin( $fh, forcearray =&gt; [ 'meta:keyword'] );
+</a></pre><p><a id="show-meta-pl-example">
+In the first line, we used <tt class="literal">IO::File-&gt;new</tt>, because
+our version of Perl wouldn’t read from a file handle opened with
+the standard Perl <tt class="function">open</tt>.  In the second line,
+the <tt class="literal">forcearray</tt> parameter will force the content
+of the <tt class="sgmltag-starttag">&lt;meta:keyword&gt;</tt> element to be
+an array type, even if there is only one element. This avoids
+scalar vs. array problems.
+</a></p><p><a id="show-meta-pl-example">
+While XML::Simple is the easiest way to accomplish this task, it is not the 
+most flexible way to parse XML. For more general XML parsing, you
+probably want to use the XML::SAX module.
+</a><a href="http://books.evc-cit.info/books/oobook/apc.html#sax-show-meta-section" title="Showing Meta-information Using SAX">the section called “Showing Meta-information Using SAX”</a> shows this same program written
+with the XML::SAX module.
+</p></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="styles-xml-section">The styles.xml File</a></h2></div></div><div></div><p><a id="styles-xml-section">
+The <tt class="filename">styles.xml</tt> file contains information about
+the styles that are used in the document. Some of this information is
+also duplicated in the <tt class="filename">content.xml</tt> document.
+</a></p><p><a id="styles-xml-section">File <tt class="filename">styles.xml</tt> begins with a
+<tt class="sgmltag-starttag">&lt;office:document-styles&gt;</tt> element,
+which contains font declarations
+(<tt class="sgmltag-starttag">&lt;office:font-decls&gt;</tt>),
+default and named styles (<tt class="sgmltag-starttag">&lt;office:styles&gt;</tt>),
+"automatic," or unnamed styles
+    (<tt class="sgmltag-starttag">&lt;office:automatic-styles&gt;</tt>),
+and master styles
+    (<tt class="sgmltag-starttag">&lt;office:master-styles&gt;</tt>). All
+of these elements are optional.
+</a></p><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="font-decls-section">Font Declarations</a></h3></div></div><div></div><p><a id="font-decls-section">The <tt class="sgmltag-starttag">&lt;office:font-decls&gt;</tt>
+element contains zero or more
+<tt class="sgmltag-starttag">&lt;style:font-decl&gt;</tt> elements. 
+<tt class="sgmltag-starttag">&lt;style:font-decl&gt;</tt> is
+an empty element whose attributes are described in
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#font-decl-table" title="Table 2.4. Attributes of the &lt;style:font-decl&gt; element">Table&nbsp;2.4, “Attributes of the &lt;style:font-decl&gt; element”</a>.
+</p><div class="table"><a id="font-decl-table"><p class="title"><b>Table&nbsp;2.4.&nbsp;Attributes of the &lt;style:font-decl&gt; element</b></p><table summary="Attributes of the &lt;style:font-decl&gt; element" border="1"><colgroup><col><col></colgroup><thead><tr><th>Attribute</th><th>Description</th></tr></thead><tbody><tr><td><p><tt class="sgmltag-attribute">style:name</tt></p></td><td><p>
+The name of the font (required).
+</p></td></tr><tr><td><p><tt class="sgmltag-attribute">fo:font-family</tt></p></td><td><p>
+The font family (required). It is 
+not necessarily the same as the font name. For example, a font named
+Courier Bold Oblique
+belongs to the Courier family, and its
+<tt class="sgmltag-attribute">fo:font-family</tt> attribute would
+be <tt class="literal">Courier</tt>. If a font family name has blanks in it,
+such as <tt class="literal">Zapf Chancery</tt>, OpenOffice.org encloses the
+value in single quotes.
+</p></td></tr><tr><td><p><tt class="sgmltag-attribute">style:font-family-generic</tt></p></td><td><p>
+The generic class to which this font belongs. Valid values for this
+optional attribute are
+<tt class="literal">roman</tt> (serif), <tt class="literal">swiss</tt> (sans-serif),
+<tt class="literal">modern</tt>, <tt class="literal">decorative</tt>,
+<tt class="literal">script</tt>, and <tt class="literal">system</tt>.
+</p></td></tr><tr><td><p><tt class="sgmltag-attribute">style:font-pitch</tt></p></td><td><p>
+This optional attribute tells whether the font is <tt class="literal">fixed</tt>
+(fixed-width, as is the Courier font)
+or <tt class="literal">variable</tt> (proportional-width).
+</p></td></tr><tr><td><p><tt class="sgmltag-attribute">style:font-style-name</tt></p></td><td><p>
+This optional attribute appears to be unused.
+</p></td></tr><tr><td><p><tt class="sgmltag-attribute">style:font-charset</tt></p></td><td><p>
+The encoding for this font; this attribute is optional.
+</p></td></tr></tbody></table></a></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a id="office-styles-section">Office Default and Named Styles</a></h3></div></div><div></div><p><a id="office-styles-section">The <tt class="sgmltag-starttag">&lt;office:styles&gt;</tt> element
+is a container for (among other things) default styles and
+named styles from OpenOffice.org’s Stylist tool. A spreadsheet’s
+<tt class="sgmltag-starttag">&lt;office:styles&gt;</tt> element will also
+contain information about style for numbers, currency, percentage
+values, dates, times, and boolean data.
+A drawing will have information about default gradients,
+hatch patterns, fill images, markers, and dash patterns for
+drawing lines.
+</a></p><p><a id="office-styles-section">
+The most important elements that you will find within
+<tt class="sgmltag-starttag">&lt;office:styles&gt;</tt> are
+<tt class="sgmltag-starttag">&lt;style:default-style&gt;</tt> and
+<tt class="sgmltag-starttag">&lt;style:style&gt;</tt>. These elements both
+contain a <tt class="sgmltag-attribute">style:family</tt> attribute
+which tells what “level” the style applies to.
+The possible values of this
+required attribute are:
+<tt class="literal">text</tt> (character level),
+<tt class="literal">paragraph</tt>,
+<tt class="literal">section</tt>,
+<tt class="literal">table</tt>,
+<tt class="literal">table-column</tt>,
+<tt class="literal">table-row</tt>,
+<tt class="literal">table-cell</tt>,
+<tt class="literal">table-page</tt>,
+<tt class="literal">chart</tt>,
+<tt class="literal">graphics</tt>,
+<tt class="literal">default</tt>,
+<tt class="literal">drawing-page</tt>,
+<tt class="literal">presentation</tt>,
+<tt class="literal">control</tt>, and
+<tt class="literal">ruby</tt><sup>[</sup></a><a href="http://books.evc-cit.info/books/oobook/ch02.html#ftn.N10798" id="N10798">1</a>]
+</p><p>
+Both <tt class="sgmltag-starttag">&lt;style:default-style&gt;</tt> and
+<tt class="sgmltag-starttag">&lt;style:style&gt;</tt> have a
+<tt class="sgmltag-attribute">style:name</tt> attribute.
+Styles built in to the stylist, or ones that you create there,
+will have names like <tt class="literal">Heading 1</tt> or
+<tt class="literal">Custom Citation</tt>.  Automatic styles will
+have names consisting of a one- or two-letter abbreviation followed by a number;
+a style name such as <tt class="literal">T1</tt> is the first automatic
+style for  <tt class="sgmltag-attribute">style:family="text"</tt>;
+<tt class="literal">P3</tt> would be the third style for paragraphs, 
+<tt class="literal">ta2</tt> would be the second style for a table, 
+<tt class="literal">ro4</tt> would be the fourth style for a table row, etc.
+</p><p>
+The other attribute of interest is the optional
+<tt class="sgmltag-attribute">parent-style-name</tt>, which you will
+find in styles that have been derived from other styles. In a text
+document, OpenOffice.org will often create a temporary style 
+whose parent is the style found in the
+<tt class="filename">styles.xml</tt> file.
+</p><p>
+Within each <tt class="sgmltag-starttag">&lt;style:style&gt;</tt> or
+<tt class="sgmltag-starttag">&lt;style:default-style&gt;</tt>, you will find
+the <tt class="sgmltag-starttag">&lt;style:properties&gt;</tt> element, which
+describes the style in minute detail via an immense<sup>[<a href="http://books.evc-cit.info/books/oobook/ch02.html#ftn.N107D7" id="N107D7">2</a>]</sup>
+number of attributes.
+A full discussion of styles is beyond the scope of this book, so we will simply
+give you an idea of the range of style specifications, and take up
+specific details of styles when they are relevant in other
+chapters.
+ <a href="http://books.evc-cit.info/books/oobook/ch02.html#style-snippet1-example" title="Example 2.4. Style Defintion in a Word Processing Document">Example&nbsp;2.4, “Style Defintion in a Word Processing Document”</a>,
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#style-snippet2-example" title="Example 2.5. Style Defintion in a Spreadsheet Document">Example&nbsp;2.5, “Style Defintion in a Spreadsheet Document”</a>, and 
+<a href="http://books.evc-cit.info/books/oobook/ch02.html#style-snippet3-example" title="Example 2.6. Style Defintion in a Drawing Document">Example&nbsp;2.6, “Style Defintion in a Drawing Document”</a> are excerpts from the
+<tt class="filename">styles.xml</tt> files in a word processing, 
+spreadsheet, and drawing document
+</p><div class="example"><a id="style-snippet1-example"><p class="title"><b>Example&nbsp;2.4.&nbsp;Style Defintion in a Word Processing Document</b></p><pre class="programlisting">&lt;style:style style:name="Text body indent" style:family="paragraph"
+  style:parent-style-name="Text body" style:class="text"&gt;
+    &lt;style:properties fo:margin-left="0.499cm"
+       fo:margin-right="0cm" fo:text-indent="0cm"
+       style:auto-text-indent="false" /&gt;
+&lt;/style:style&gt;
+</pre></a></div><div class="example"><a id="style-snippet2-example"><p class="title"><b>Example&nbsp;2.5.&nbsp;Style Defintion in a Spreadsheet Document</b></p><pre class="programlisting">&lt;number:currency-style style:name="N104" style:family="data-style"&gt;
+    &lt;style:properties fo:color="#ff0000" /&gt;
+    &lt;number:text&gt;-&lt;/number:text&gt;
+    &lt;number:currency-symbol number:language="en"
+       number:country="US"&gt;$&lt;/number:currency-symbol&gt;
+    &lt;number:number number:decimal-places="2"
+       number:min-integer-digits="1" number:grouping="true" /&gt;
+    &lt;style:map style:condition="value()&amp;gt;=0"
+       style:apply-style-name="N104P0" /&gt;
+&lt;/number:currency-style&gt;
+&lt;style:style style:name="Result2" style:family="table-cell"
+   style:parent-style-name="Result"
+   style:data-style-name="N104" /&gt;
+</pre></a></div><div class="example"><a id="style-snippet3-example"><p class="title"><b>Example&nbsp;2.6.&nbsp;Style Defintion in a Drawing Document</b></p><pre class="programlisting">&lt;style:style style:name="objectwitharrow"
+   style:family="graphics" style:parent-style-name="standard"&gt;
+    &lt;style:properties draw:stroke="solid"
+       svg:stroke-width="0.15cm" svg:stroke-color="#000000"
+       draw:marker-start="Arrow"
+       draw:marker-start-width="0.7cm"
+       draw:marker-start-center="true"
+       draw:marker-end-width="0.3cm" /&gt;
+&lt;/style:style&gt;
+</pre></a></div></div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="text-doc-superstructure-section">The content.xml File</a></h2></div></div><div></div><p><a id="text-doc-superstructure-section">
+Although the details of the <tt class="filename">content.xml</tt> vary
+widely depending upon the type of document you are dealing with, 
+there are elements which are common to all
+<tt class="filename">content.xml</tt> files.  The root element is
+the <tt class="sgmltag-starttag">&lt;office:document-content&gt;</tt>
+element. It defines all the namespaces that will be used throughout
+the document, and, most important, has the
+<tt class="sgmltag-attribute">office:class</tt> attribute,
+which tells you what kind of document you have.  The possible
+values for this attribute are
+<tt class="literal">text</tt>,
+<tt class="literal">text-global</tt>,
+<tt class="literal">drawing</tt>,
+<tt class="literal">presentation</tt>,
+<tt class="literal">spreadsheet</tt>, and
+<tt class="literal">chart</tt>.  The
+<tt class="sgmltag-attribute">office:version</tt> attribute
+tells you which version of OpenOffice.org created the document.
+</a></p><p><a id="text-doc-superstructure-section">
+The following elements are contained within
+the  <tt class="sgmltag-starttag">&lt;office:document-content&gt;</tt> element.
+The optional <tt class="sgmltag-starttag">&lt;office:meta&gt;</tt> and
+<tt class="sgmltag-starttag">&lt;office:settings&gt;</tt> elements, usually
+absent in normal documents, can contain the same information and
+structure as found in the <tt class="filename">meta.xml</tt> and
+<tt class="filename">settings.xml</tt> files.
+The optional <tt class="sgmltag-starttag">&lt;office:script&gt;</tt> element 
+does appear in most documents and is always empty, even if your 
+document contains macros. Go figure.
+</a></p><p><a id="text-doc-superstructure-section">
+The <tt class="sgmltag-starttag">&lt;office:script&gt;</tt> is
+followed by elements that describe the document’s presentation.
+The optional <tt class="sgmltag-starttag">&lt;office:font-decls&gt;</tt> element
+describes fonts used in your document, and duplicates the information
+found in <tt class="filename">styles.xml</tt>.  The optional
+<tt class="sgmltag-starttag">&lt;office:styles&gt;</tt> element appears to
+be unused.  If you have defined any styles “on the fly,” then these
+automatic styles are described in the optional
+<tt class="sgmltag-starttag">&lt;office:automatic-styles&gt;</tt> element.
+This is followed by the optional
+<tt class="sgmltag-starttag">&lt;office:master-styles&gt;</tt> element, which
+is absent in most documents.
+</a></p><p><a id="text-doc-superstructure-section">
+The last child element of
+<tt class="sgmltag-starttag">&lt;office:document-content&gt;</tt>
+is the required, and all-important,
+<tt class="sgmltag-starttag">&lt;office:body&gt;</tt> element. This is
+where all the action is, and we will spend much of the rest of this
+book examining its contents.
+</a><a href="http://books.evc-cit.info/books/oobook/ch02.html#document-skeleton-example" title="Example 2.7. Structure of the content.xml file">Example&nbsp;2.7, “Structure of the content.xml file”</a> shows the skeleton
+for an OpenOffice.org document’s <tt class="filename">content.xml</tt>
+file.
+</p><div class="example"><a id="document-skeleton-example"><p class="title"><b>Example&nbsp;2.7.&nbsp;Structure of the content.xml file</b></p><pre class="programlisting">&lt;office:document-content <span class="emphasis"><em>namespace declarations</em></span>
+  office:version="1.0"
+  office:class="<span class="emphasis"><em>document type</em></span>"&gt;
+    &lt;office:meta&gt;
+        &lt;!-- optional meta information --&gt;
+    &lt;/office:meta&gt;
+    &lt;office:settings&gt;
+        &lt;!-- optional settings information --&gt;
+    &lt;/office:settings&gt;
+    
+    &lt;office:script/&gt;
+    
+    &lt;office:font-decls&gt;
+        &lt;!-- font specifications --&gt;
+    &lt;/office:font-decls&gt;
+    
+    &lt;office:styles&gt;
+        &lt;office:automatic-styles&gt;
+            &lt;!-- style information --&gt;
+        &lt;/office:automatic-styles&gt;
+        
+        &lt;office:master-styles&gt;
+            &lt;!-- optional master style information --&gt;
+        &lt;/office:master-styles&gt;
+    &lt;/office:styles&gt;
+    
+    &lt;office:body&gt;
+        &lt;!-- actual content here --&gt;
+    &lt;/office:body&gt;
+&lt;/office:document-content&gt;
+</pre></a></div></div><div class="footnotes"><a id="document-skeleton-example"><br><hr align="left" width="100"></a><div class="footnote"><a id="document-skeleton-example"></a><p><a id="document-skeleton-example"><sup>[</sup></a><a href="http://books.evc-cit.info/books/oobook/ch02.html#N10798" id="ftn.N10798">1</a>] Ruby refers to
+“furigana,” which are small Japanese alphabetic characters placed near
+the Japanese ideograms to aid readers in determining their correct
+meaning.</p></div><div class="footnote"><p><sup>[<a href="http://books.evc-cit.info/books/oobook/ch02.html#N107D7" id="ftn.N107D7">2</a>] </sup>As of this writing, “immense” is defined as 514.</p></div></div></div><hr><div><a href="http://creativecommons.org/licenses/by-nd-nc/1.0"><img src="./Chapter 2. The meta.xml, styles.xml, settings.xml, and content.xml Files_files/somerights.png" style="margin-right: 0.5em;" align="left" border="0" alt="Creative Commons License"></a>
+Content licensed under a
+<a href="http://creativecommons.org/licenses/by-nd-nc/1.0">Creative Commons
+License</a>.
+</div><div>
+All content is copyright O’Reilly &amp; Associates, Inc.
+</div><div>
+During development,
+I give permission for non-commercial copying for educational and
+review purposes. After publication, all text will be released
+under the Free Software Foundation’s GNU Free Documentation License.
+</div><div class="navfooter"><hr><table summary="Navigation footer" width="100%"><tbody><tr><td align="left" width="40%"><a accesskey="p" href="http://books.evc-cit.info/books/oobook/ch01.html">Prev</a>&nbsp;</td><td align="center" width="20%"><a accesskey="u" href="http://books.evc-cit.info/books/oobook/book.html">Up</a></td><td align="right" width="40%">&nbsp;<a accesskey="n" href="http://books.evc-cit.info/books/oobook/ch03.html">Next</a></td></tr><tr><td valign="top" align="left" width="40%">Chapter&nbsp;1.&nbsp;The OpenOffice.org File Format&nbsp;</td><td align="center" width="20%"><a accesskey="h" href="http://books.evc-cit.info/books/oobook/book.html">Home</a></td><td valign="top" align="right" width="40%">&nbsp;Chapter&nbsp;3.&nbsp;Text Document Basics</td></tr></tbody></table></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></body></html>

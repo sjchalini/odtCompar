@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://www.openoffice.org/xml/faq.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="./OpenOffice.org XML file format FAQ_files/ooo.css" rel="stylesheet" type="text/css">
+
+<title>OpenOffice.org XML file format FAQ</title>
+
+
+<script type="text/javascript" async="" src="./OpenOffice.org XML file format FAQ_files/ga.js"></script><script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-98607986-1']);
+    _gaq.push(['_setDomainName', 'openoffice.org']);
+    _gaq.push (['_gat._anonymizeIp']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+ 
+<script type="text/javascript">
+/*!
+ * Entourage 1.1.2 - Automatic Download Tracking for Asynchronous Google Analytics
+ *
+ * Copyright (c) 2011 by Tian Valdemar Davis (http://techoctave.com/c7)
+ * Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.
+ *
+ * Learn More: http://techoctave.com/c7/posts/58-entourage-js-automatic-download-tracking-for-asynchronous-google-analytics
+ * 
+ * 2012-04-24 Mod by robweir to whitelist additional file extensions as used in AOO project
+ * 2012-04-25 Mod by robweir to remove trailing "/download" from SourceForge file names, a hack we can hopefully remove someday
+ */
+
+/*jshint strict:false */
+
+(function() {
+var entourage = new (function() {
+	var version = "1.1.2";
+	var whitelist = /\.pdf$|\.zip$|\.gz$|\.gz\/download$|\.bz2$|\.bz2\/download$|\.od*|\.doc*|\.xls*|\.ppt*|\.exe$|\.exe\/download$|\.dmg$|\.dmg\/download$|\.mov$|\.avi$|\.mp3$/i;
+	
+	//Get true FileName from link pathname
+	var getFileName = function(pathname) {
+		//Remove the anchor at the end (if one exists)
+		pathname = pathname.substring(0, (pathname.indexOf("#") === -1) ? pathname.length : pathname.indexOf("#"));
+
+		//Removes the query after the file pathname (if one exists)
+		pathname = pathname.substring(0, (pathname.indexOf("?") === -1) ? pathname.length : pathname.indexOf("?"));
+      
+        //Remove trailing /download
+		if (/\/download$/.test(pathname))
+			pathname = pathname.substring(0, pathname.length-"/download".length);
+
+		//Removes everything before the last slash in the path
+		pathname = pathname.substring(pathname.lastIndexOf("/") + 1, pathname.length);
+
+		return pathname;
+	};
+
+	var autograph = function() {
+		var fileName, associate;
+
+		//Get the file name
+		fileName = getFileName(this.pathname); //The link object is now available in "this"
+
+		//Add file to the Google Analytics Queue
+		associate = '/download/' + fileName;
+		
+		//Track download using Asynchronous Google Analytics
+		_gaq.push(['_trackPageview', associate]);
+    };
+
+	var initialize = function() {
+		var links = document.links;
+		
+		for (var i = 0, l = links.length; i < l; i++) {
+			//Compare the fileType to the whitelist
+			var match = links[i].pathname.match(whitelist);
+			
+			//If the link is for a file download . . .
+			if (typeof match !== "undefined" && match !== null) {
+				//Call Entourage whenever the link is clicked
+				links[i].onclick = autograph;
+			}
+		}
+    };
+
+	return {
+		version: version,
+		initialize: initialize
+	};
+})(); //Entourage.js
+
+//Add entourage to the global namespace
+window.entourage = entourage;
+
+//Execute entourage onload - ensuring links are present in the DOM
+window.onload = entourage.initialize;
+})();
+</script>
+
+
+</head>
+<body>
+  <div id="bannera">
+  <div id="languagesdiv">
+  	Language:
+  	<select id="selectlanguage" onchange="javascript:location.href=location.protocol+&#39;//&#39;+location.host+&#39;/&#39;+this.value;">
+  	<!-- Asturian --><option value="ast">Asturianu (ast)</option>
+	<!-- Catalan --><option value="ca">Català (ca)</option>
+  	<!-- Czech --><option value="cs">Čeština (cs)</option>
+  	<!-- Danish --><option value="da">Dansk (da)</option>
+  	<!-- German --><option value="de">Deutsch (de)</option>
+  	<!-- English [British]<option value="en-gb">English [British] (en-gb)</option> -->
+  	<!-- English [US] --><option value="?redirect=soft" selected="selected">English (en)</option>
+  	<!-- Spanish --><option value="es">Español (es)</option>
+  	<!-- Basque --><option value="eu">Euskara (eu)</option>
+  	<!-- French --><option value="fr">Français (fr)</option>
+  	<!-- Scottish --><option value="gd">Gàidhlig (gd)</option>
+  	<!-- Galician --><option value="gl">Galego (gl)</option>
+  	<!-- Italian --><option value="it">Italiano (it)</option>
+  	<!-- Lithuanian --><option value="lt">Lietuvių (lt)</option>
+  	<!-- Hungarian --><option value="hu">Magyar (hu)</option>
+  	<!-- Dutch --><option value="nl">Nederlands (nl)</option>
+  	<!-- Norwegian --><option value="no">Norsk (no)</option>
+	<!-- Polish --><option value="pl">Polski (pl)</option>
+  	<!-- Portuguese [Brazilian] --><option value="pt-br">Português [do Brasil] (pt-br)</option>
+  	<!-- Portuguese [European] --><option value="pt">Português [Europeu] (pt)</option>
+  	<!-- Slovak --><option value="sk">Slovenčina (sk)</option>
+  	<!-- Slovenian --><option value="sl">Slovenščina (sl)</option>
+  	<!-- Finnish --><option value="fi">Suomi (fi)</option>
+  	<!-- Swidish --><option value="sv">Svenska (sv)</option>
+  	<!-- Turkish  --><option value="tr">Türkçe (tr)</option>
+  	<!-- Vietnamese --><option value="vi">Tiếng Việt (vi)</option>
+  	<!-- Greek --><option value="el">Ελληνικά (el)</option>
+  	<!-- Bulgarian --><option value="bg">български език (bg)</option>
+  	<!-- Russian --><option value="ru">Русский (ru)</option>
+  	<!-- Serbian [Cyrillic] --><option value="sr">Cрпски [ћирилицом] (sr)</option>
+ 	<!-- Arabic <option value="ar">العربية (ar)</option> -->
+  	<!-- Hebrew --><option value="he">עברית (he)</option>
+  	<!-- Hindi --><option value="hi">हिन्दी (hi)</option>
+  	<!-- Khmer --><option value="km">ភាសាខ្មែរ (km)</option>
+  	<!-- Tamil --><option value="ta">தமிழ் (ta)</option>
+  	<!-- Thai --><option value="th">ภาษาไทย (th)</option>
+  	<!-- Chinese [simplified] --><option value="zh-cn">简体中文 (zh-cn)</option>
+  	<!-- Chinese [traditional] --><option value="zh-tw">正體中文 (zh-tw)</option>
+  	<!-- Japanese --><option value="ja">日本語 (ja)</option>
+  	<!-- Korean --><option value="ko">한국어 (ko)</option>
+	</select>
+	<script>
+	  var lang = "en";
+	  var dropdown = document.getElementById('selectlanguage');
+	  var options = dropdown.options;
+	  for( var i = 0; i < dropdown.options.length; i++ ) {
+	    if( dropdown.options[ i ].value == lang ) {
+	      dropdown.selectedIndex = i;
+	      break;
+	    }
+	  }
+	</script>
+  </div>
+  <div id="bannerleft"><a title="Apache OpenOffice" href="https://www.openoffice.org/"><img id="ooo-logo" alt="Apache OpenOffice" src="./OpenOffice.org XML file format FAQ_files/AOO4_website_logo.png"></a></div>
+    <div id="bannerright">        
+      <div id="searchdiv">
+	<form id="cse-search-box-header" action="https://www.google.com/search" method="get">
+	  <div>
+	    <input type="hidden" name="domains" value="https://www.openoffice.org">
+	    <input type="hidden" name="sitesearch" value="https://www.openoffice.org">
+	  </div>
+	  <div class="topsrchbox">
+	    <input name="resultsPerPage" value="40" type="hidden"> 
+	    <input name="q" id="query" type="text" title="search query">
+	    <input name="Button" value="search" type="submit" class="topsrchbutton">
+	  </div>
+	</form>
+      </div>
+    </div>
+    <div id="bannercenter"><br>The Free and Open Productivity Suite</div>
+  </div>
+  <div id="announce"><a href="https://blogs.apache.org/OOo/entry/announcing-apache-openoffice-4-12" title="Apache OpenOffice 4.1.6 released">Apache OpenOffice 4.1.6 released</a></div>
+
+  <div id="topbara">
+    <div id="topnava"><style type="text/css">
+/* The following code is added by mdx_elementid.py
+   It was originally lifted from http://subversion.apache.org/style/site.css */
+/*
+ * Hide class="elementid-permalink", except when an enclosing heading
+ * has the :hover property.
+ */
+.headerlink, .elementid-permalink {
+  visibility: hidden;
+}
+h2:hover > .headerlink, h3:hover > .headerlink, h1:hover > .headerlink, h6:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, dt:hover > .elementid-permalink { visibility: visible }</style>
+<ul>
+<li><a href="https://www.openoffice.org/product/index.html" title="Apache OpenOffice product description">Product</a></li>
+<li><a href="https://www.openoffice.org/download/index.html" title="Download OpenOffice">Download</a></li>
+<li><a href="https://www.openoffice.org/support/index.html" title="Find Support for OpenOffice">Support</a></li>
+<li><a href="https://blogs.apache.org/ooo/" title="Apache OpenOffice Blog">Blog</a></li>
+<li><a href="https://www.openoffice.org/extensions/index.html" title="Extensions and Templates for OpenOffice">Extend</a></li>
+<li><a href="https://openoffice.apache.org/get-involved.html" title="Get involved in Apache OpenOffice">Develop</a></li>
+<li><a href="https://www.openoffice.org/projects/accepted.html" title="Apache OpenOffice development focus areas">Focus Areas</a></li>
+<li><a href="https://www.openoffice.org/projects/native-lang.html" title="Apache OpenOffice in your Native Language">Native Language</a></li>
+</ul></div>
+
+    <div id="breadcrumbsa"><a href="https://www.openoffice.org/">home</a>&nbsp;»&nbsp;<a href="https://www.openoffice.org/xml/">xml</a></div>
+  </div>
+  <div id="clear"></div>
+  
+  
+  <div id="content">
+    
+    
+    
+	<p><strong>Note:</strong>This FAQ is for the OpenOffice.org XML file format only. OASIS OpenDocument/ISO/IEC 26300 FAQs are available at <a href="http://www.oasis-open.org/committees/office/faq.php">OASIS</a> and <a href="http://opendocument.xml.org/faq">opendocument.xml.org</a>.</p><p>
+<a name="top"></a></p><p><img alt="" src="./OpenOffice.org XML file format FAQ_files/start_blue_bar.gif">&nbsp;&nbsp;<font size="-1"><b>MOST FREQUENTLY ASKED QUESTIONS: QUESTIONS</b></font>&nbsp;&nbsp;<img alt="" src="./OpenOffice.org XML file format FAQ_files/end_blue_bar.gif"></p><ol>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#1">
+    Which OpenOffice.org application uses XML-based file formats?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#2">
+    What are the default file extensions for XML-based documents?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#3">
+    What is all that binary goo I see in your files?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#4">
+    What package format do you use, and what do I find inside?    
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#5">
+    How can I put additional information into an XML file?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#6">
+    But I really, really want plain XML. No compression, no binary
+    data, no nothing. Just plain XML. Can I have that, please?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#7">
+    Why are so many styles written out?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#8">
+    How are embedded images and binary data handled?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#9">
+    Why didn't you use XHTML, XSL-FO, SVG, etc. ?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#10">
+    Can I write an XML translation from or into  ...?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#11">
+    I found a bug. What do I do?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#12">
+    Hey, I like your XML format. How can I help?
+  </a></li>
+
+ <li><a href="https://www.openoffice.org/xml/faq.html#13">
+    But what about ...? And why isn't
+    my favorite question in here?
+  </a></li>
+
+ 
+
+</ol><p><img alt="" src="./OpenOffice.org XML file format FAQ_files/start_blue_bar.gif">&nbsp;&nbsp;<font size="-1"><b>MOST FREQUENTLY ASKED QUESTIONS: ANSWERS</b></font>&nbsp;&nbsp;<img alt="" src="./OpenOffice.org XML file format FAQ_files/end_blue_bar.gif"></p>
+
+ <ol><a name="1"></a><li value="1"><b>
+    Which OpenOffice.org application uses XML-based file formats?
+  </b><p><answer>
+    All OpenOffice.org applications use XML-based file formats. All
+    applications (except Math) use the same format as defined in our <a href="https://www.openoffice.org/xml/xml_specification.pdf">specification</a>. 
+    The Math component uses our package structure and format (see
+    below), but uses <a href="http://www.w3.org/Math/">MathML</a>
+    inside the package.
+  </answer></p><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="2"></a><li value="2"><b>
+    What are the default file extensions for XML-based documents?
+  </b><answer>
+    <table summary="OpenOffice.org XML file types">
+     <tbody><tr> <th>Writer</th> <td>sxw</td> </tr>
+     <tr> <th>Calc</th> <td>sxc</td> </tr>
+     <tr> <th>Draw</th> <td>sxd</td> </tr>
+     <tr> <th>Impress</th> <td>sxi</td> </tr>
+     <tr> <th>Math</th> <td>sxm</td> </tr>
+     <tr> <th>Writer<br>global document</th> <td>sxg</td> </tr>
+    </tbody></table>
+    <p>XML is also used in other OpenOffice.org files
+    (e.g. configuration) which are not covered in the <tt>xmloff</tt> 
+    project.</p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="3"></a><li value="3"><b>
+    What is all that binary goo I see in your files?
+  </b><answer>
+    <p>Our documents use packages that contain the XML data alongside
+    binary data such as images. The packages use the well known ZIP format. 
+    Just open an sxw/sxc/... file with a ZIP-tool of your choice, and 
+    you get access to the unadulterated XML.</p>
+    <p>The document meta data (in the meta.xml stream) is not
+    compressed. This allows for easy searching and extraction of the
+    meta data.</p>
+    <p> For more information on our packages, see the next question. </p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="4"></a><li value="4"><b>
+    What package format do you use, and what do I find inside?    
+  </b><answer>
+
+    <p>We use the well-known ZIP file format as a package format. In
+    addition, we store an XML-based manifest file that describes the
+    package content and may supply additional information about the
+    included files (e.g. encryption method). Since we use ZIP, most
+    archive programs can already handle our files.</p>
+
+    <p>Inside the package, you generally find several streams that
+    make up the full office document. These are: </p>
+
+    <table>
+     <tbody><tr> 
+      <th>meta.xml</th> 
+      <td>information about the document (author, time of last save, ...)</td>
+     </tr>
+     <tr>
+      <th>styles.xml</th>
+      <td>styles that are used in the document</td>
+     </tr>
+     <tr>
+      <th>content.xml</th>
+      <td>main document content (text, tables, graphical elements)</td>
+     </tr>
+     <tr>
+      <th>settings.xml</th>
+      <td>document and view settings (such as magnification level and 
+          selected printer); these are usually application specific </td>
+     </tr>
+     <tr>
+      <th>META-INF/manifest.xml</th>
+      <td>provides additional information about the other files (such
+      as MIME type or encryption method)</td>
+     </tr>
+     <tr>
+      <th>Pictures/</th>
+      <td>directory containing images (in their native, binary formats)</td>
+     </tr>
+     <tr>
+      <th>Dialogs/</th>
+      <td>directory containing dialogs used by document macros</td>
+     </tr>
+     <tr>
+      <th>Basic/</th>
+      <td>directory containing StarBasic macros</td>
+     </tr>
+     <tr>
+      <th>Obj.../</th>
+      <td>directories containing embedded objects, such as charts;
+      each directory contains one such object, stored in its native format.
+      For OpenOffice.org objects that is its XML representation, for other
+      objects it's usually a binary format.</td>
+     </tr>
+    </tbody></table>
+
+    <p>For more information on why we chose ZIP, please read <a href="https://www.openoffice.org/xml/package.html">package.html</a>. For more information on the
+    ZIP format itself, please look <a href="http://www.wotsit.org/">here</a>.</p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="5"></a><li value="5"><b>
+    How can I put additional information into an XML file?
+  </b><answer>
+    <p><em>Alien</em> attributes, i.e. attributes not defined in the
+    OpenOffice.org DTD, will be preserved if they are attached to
+    <code>&lt;style:properties&gt;</code> elements in style
+    definitions. All other alien content will be discarded by the
+    OpenOffice.org import filters.</p>
+    <p>Since you can attach styles to arbitrary text ranges, you can
+    use this mechanism to attach your information to arbitrary text
+    ranges, too.</p>
+    <p><strong>Note:</strong> The above mechanism seems to only work
+    in Writer. The issue is under investigation.</p>
+    <p>It is planned that you can also put additional files with your
+    own content into the packages. However, this doesn't work yet.</p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="6"></a><li value="6"><b>
+    But I really, really want plain XML. No compression, no binary
+    data, no nothing. Just plain XML. Can I have that, please?
+  </b><answer>
+    <p>For purposes of import and export, we provide <a href="http://udk.openoffice.org/">UNO</a>-based services that
+    allow you to import or export XML data through the SAX
+    interface. A documentation of this technique is available <a href="https://www.openoffice.org/xml/filter/">here</a>.</p>
+    <p>Also, it is planned to allow plain XML files (without packages)
+    to be read and written. However, this is not implemented yet.</p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="7"></a><li value="7"><b>
+    Why are so many styles written out?
+  </b><answer>
+    <p>In general, styles that are used in the document or that have been
+    modified by the user are written to disk. The former is necessary
+    to render the document correctly. The latter is preserved because
+    if a user edited those styles, he/she is likely to use them later
+    on. Therefore, those styles should not be discarded, even though
+    they do not contribute to the document in its current form and
+    shape.</p>
+    <p>If styles that meet neither of these criteria are written, then
+    this is may be considered a bug. The Draw, Impress, and Calc
+    applications currently show this behavior. </p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="8"></a><li value="8"><b>
+    How are embedded images and binary data handled?
+  </b><p><answer>
+    Images and embedded objects are stored in their native formats
+    into the ZIP-based package format.
+  </answer></p><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="9"></a><li value="9"><b>
+    Why didn't you use XHTML, XSL-FO, SVG, etc. ?
+  </b><answer>
+    <p>Those formats are not used because they do not have a
+    suitable level of presentation for office documents. When we found an
+    established format (like the ones mentioned above) contains
+    concepts that are used in OpenOffice.org as well, then we
+    generally adopted their representation for those concepts in our
+    XML format. We hope this will ease transformation between the
+    formats.</p>
+
+<!--
+    <p>As an example for the unsuitable level of presentation consider
+    text fields: A text field contains a string of text that gets
+    automatically for this consider text fields: Text fields are
+    special regions of text strings that are automatically updated by
+    the application. The text fields must be preserved, of course, so
+    the application can continue to update them. While the above
+    formats easily accomodate the text field output (after all, it's
+    just a string of text), they can only be represented by some sort
+    of extension to the basic format. Since these sort of issues
+    occur quite a lot, it seemed more prudent to create an own format.</p>
+-->
+
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="10"></a><li value="10"><b>
+    Can I write an XML translation from or into  ...?
+  </b><answer>
+    <p>You are absolutely welcome to write transformation from our
+    XML-based file format into and from anything you see fit.</p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="11"></a><li value="11"><b>
+    I found a bug. What do I do?
+  </b><answer>
+    <p>Report it using <a href="http://www.openoffice.org/issues/enter_bug.cgi">IssueZilla</a>. Try
+    to give a detailed description of what went wrong. Don't forget to
+    include the document in which the error occurred. (After submission
+    of the bug, choose "create attachment".)</p>
+    <p><strong>DON'T BE SHY ABOUT REPORTING BUGS!</strong> All of us
+    are interested in stable and bug-free applications, and bug
+    reports from our users are a very important means towards that
+    end. Bug reports help all of us. If you don't report your
+    findings, we can't fix them, and so they will cause problems for
+    users as well.</p>
+  </answer><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="12"></a><li value="12"><b>
+    Hey, I like your XML format. How can I help?
+  </b><p><answer>
+    There are many things you can do to help.
+    </answer></p><ol>
+     <li>You can spread the word, e.g. by telling your friends and
+     co-workers about OpenOffice.org.</li>
+     <li>You can use the OpenOffice.org applications and report any
+     bugs you find.</li>
+     <li>You can program transformation from our format into others
+     (and vice versa).</li>
+     <li>You can implement one of the suggestions on the todo list on our homepage. </li>
+    </ol>
+  <p></p><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ <ol><a name="13"></a><li value="13"><b>
+    But what about ...? And why isn't
+    my favorite question in here?
+  </b><p><answer>
+    If your question is not answered here, ask it on our mailing
+    list. You can view the archives <a href="http://xml.openoffice.org/xml-dev/">here</a>. Instructions
+    for joining the list are on our <a href="http://xml.openoffice.org/">project homepage</a>.
+  </answer></p><br></li></ol><a href="https://www.openoffice.org/xml/faq.html#top">Back to top</a><hr noshade="noshade" size="1" align="left"><br>
+
+ 
+
+<p><small>FAQ maintained by <a href="mailto:dvo@openoffice.org">dvo</a>.</small></p>
+
+  </div>
+  <div id="footera">
+    <div id="poweredbya">
+      <p>
+        <a href="https://www.apache.org/">
+		<img src="./OpenOffice.org XML file format FAQ_files/asf_logo_small.png" alt="Apache Software Foundation" height="76" width="188">
+        </a>
+      </p>
+    </div>
+    <div id="copyrighta">
+      <p style="text-align:center;">
+        <a href="https://www.openoffice.org/license.html">Copyright &amp; License</a> |
+        <a href="https://www.openoffice.org/privacy.html">Privacy</a> |
+        <a href="https://www.openoffice.org/contact_us.html">Contact Us</a> |
+        <a href="https://www.openoffice.org/donations.html">Donate</a> |
+        <a href="https://www.apache.org/foundation/thanks.html">Thanks</a>
+      </p>
+      <p>
+        Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        OpenOffice, OpenOffice.org and the seagull logo are registered trademarks of The Apache Software Foundation.
+        Other names appearing on the site may be trademarks of their respective owners.
+      </p>
+    </div>
+  </div>
+
+
+
+</body></html>
