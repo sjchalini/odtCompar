@@ -26,7 +26,7 @@ public class TestXFormData {
 
    public static void main(String[] args) throws Exception {
         //Unzip the openOffice Document
-        ZipFile zipFile = new ZipFile("/home/silviana/NetBeansProjects/odtCompar/src/main/java/com/mycompany/odtcompar/Simple2.odt");
+        ZipFile zipFile = new ZipFile("/home/silviana/NetBeansProjects/odtCompar/src/main/java/com/mycompany/odtcompar/1.odt");
         Enumeration entries = zipFile.entries();
         ZipEntry entry;
 
